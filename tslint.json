@@ -59,7 +59,8 @@
   },
   "linterOptions": {
     "exclude": [
-      "src/patterns"
+      "**/node_modules/**",
+      "**/dist/**"
     ]
   }
 }
