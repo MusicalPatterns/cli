@@ -1,12 +1,15 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "bin": {
     "musical-patterns": "cli/index.sh"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/MusicalPatterns/cli.git"
+  },
+  "scripts": {
+    "postinstall": "sh ./bin/postinstall.sh"
   },
   "dependencies": {
     "@types/jasmine": "^3.3.0",

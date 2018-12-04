@@ -1,7 +1,7 @@
 // tslint:disable
 
 // @ts-ignore
-require('browser-env')()
+require('../node_modules/@musical-patterns/cli/node_modules/browser-env')()
 // @ts-ignore
 declare const global: any
 

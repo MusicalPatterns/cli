@@ -4,7 +4,7 @@
     "tslint-eslint-rules"
   ],
   "rulesDirectory": [
-    "lint"
+    "node_modules/@musical-patterns/cli/lint"
   ],
   "rules": {
     "no-unused-variable": false,
