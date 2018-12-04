@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-tslint '**/*.ts{,x}' --fix -p tsconfig.json
-tslint 'test/**/*.ts{,x}' --fix -p test/tsconfig.json
+tslint '**/*.ts{,x}' --fix
+tslint 'test/**/*.ts{,x}' --fix
