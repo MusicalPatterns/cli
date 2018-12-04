@@ -9,7 +9,6 @@
     ],
     "moduleResolution": "node",
     "noImplicitReturns": true,
-    "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
