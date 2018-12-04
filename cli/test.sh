@@ -11,7 +11,9 @@ test -f "$JASMINE_PATH"
 JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${UTILITIES_DIRECTORY}${JASMINE_PATH}")
 
 tsc -p ./test/tsconfig.json
-ts-node -P ./test/tsconfig.json ${JASMINE_BINARY}
+if [[ $? == 0 ]] ; then
+	ts-node -P ./test/tsconfig.json ${JASMINE_BINARY}
+fi
 
 ${UTILITIES_DIRECTORY}cli/unshare.sh test/tsconfig.json
 ${UTILITIES_DIRECTORY}cli/unshare.sh tsconfig-common.json
