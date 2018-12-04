@@ -16,7 +16,6 @@
     "browser-env": "^3.2.5",
     "jasmine": "^3.3.0",
     "ts-node": "^7.0.1",
-    "tsc": "^1.20150623.0",
     "tslint": "^5.11.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.1.6"
