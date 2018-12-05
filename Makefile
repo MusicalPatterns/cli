@@ -11,7 +11,7 @@ publish:
 	npm publish --access public
 
 push:
-	@:
+	git push
 
 ship:
 	sh ./cli/ship.sh
