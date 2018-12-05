@@ -7,3 +7,4 @@ bin/share.sh tsconfig-node.json
 bin/share.sh tslint.json
 bin/share.sh test/tslint.json
 bin/share.sh test/mockDom.ts
+bin/share.sh Makefile
