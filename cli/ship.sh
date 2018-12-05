@@ -2,8 +2,6 @@
 
 set -e
 
-MSG="$1"
-
 make test
 make lint
 VERSION=$(npm version patch)

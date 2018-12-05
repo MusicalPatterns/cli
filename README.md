@@ -8,6 +8,6 @@ musical-patterns build
 musical-patterns publish
 musical-patterns push
 musical-patterns pull
-musical-patterns ship
+musical-patterns ship MSG="improves the taste"
 
 ```
