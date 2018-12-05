@@ -8,6 +8,6 @@ make test
 make lint
 VERSION=$(npm version patch)
 git add .
-gc -m "${VERSION}: ${MSG}"
+git commit -m "${VERSION}: ${MSG}"
 make push
 make publish
