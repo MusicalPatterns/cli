@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "bin": {
     "musical-patterns": "cli/index.sh"
   },
@@ -12,12 +12,12 @@
     "postinstall": "sh ./bin/postinstall.sh"
   },
   "dependencies": {
-    "@types/jasmine": "^3.3.0",
+    "@types/jasmine": "^3.3.1",
     "browser-env": "^3.2.5",
     "jasmine": "^3.3.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.1"
   }
 }
