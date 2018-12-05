@@ -2,7 +2,6 @@
 
 set -e
 
-npm update
 make test
 make lint
 VERSION=$(npm version patch)
