@@ -1,7 +1,7 @@
 .PHONY: lint
 .PHONY: test
 
-include Makefile.*
+-include Makefile.*
 
 build:
 	musical-patterns build
