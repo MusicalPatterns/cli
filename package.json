@@ -4,12 +4,13 @@
   "bin": {
     "musical-patterns": "cli/index.sh"
   },
+  "scripts": {
+    "postinstall": "sh ./bin/postinstall.sh"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/MusicalPatterns/cli.git"
-  },
-  "scripts": {
-    "postinstall": "sh ./bin/postinstall.sh"
   },
   "dependencies": {
     "@types/jasmine": "^3.3.1",
