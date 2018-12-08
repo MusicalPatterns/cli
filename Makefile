@@ -18,6 +18,9 @@ pull:
 push:
 	musical-patterns push
 
+share_config:
+	musical-patterns share_config
+
 ship:
 	musical-patterns ship
 

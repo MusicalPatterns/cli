@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-FILE="$1"
-
-ESCAPE_UTILITIES_DIRECTORY="../../../"
-
-cp ${FILE} ${ESCAPE_UTILITIES_DIRECTORY}${FILE}
