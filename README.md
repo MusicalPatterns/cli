@@ -48,7 +48,3 @@ Undoes the above.
 This command is run as an npm postinstall script when this is installed as an npm package, but can be re-run at any time. 
 
 Replaces a number of basic configuration files for building, testing, starting, and linting with standards for Musical Patterns.
-
-`musical-patterns update`
-
-Updates dependencies (including in submodules).
