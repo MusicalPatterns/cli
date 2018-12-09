@@ -2,7 +2,7 @@
 
 ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 
-function share_file {
+share_file() {
 	FILE="$1"
 	cp ${FILE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
 }

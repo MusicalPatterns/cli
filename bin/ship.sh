@@ -11,7 +11,7 @@ if [[ ${VERSIONED} -ne 0 ]] ; then
 	printf "This project does not publish itself to npm. "
 fi
 
-function commit_recursively {
+commit_recursively() {
 	git add .
 	git commit -m "${VERSION}: ${MSG}"
 	git submodule foreach commit_recursively
