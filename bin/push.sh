@@ -2,5 +2,9 @@
 
 set -e
 
-git push
-git submodule foreach git push
+function push_recursively {
+	git push
+	git submodule foreach push_recursively
+}
+
+push_recursively

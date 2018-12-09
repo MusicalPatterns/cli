@@ -2,7 +2,9 @@
 
 set -e
 
-git pull -r
-git submodule update --init --recursive
-git submodule foreach git checkout master
-git submodule foreach pull -r
+function pull_recursively {
+	git checkout master
+	git submodule update --init --recursive
+	git pull -r
+	git submodule foreach pull_recursively
+}
