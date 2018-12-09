@@ -1,0 +1,26 @@
+build:
+	@:
+
+lint:
+	@:
+
+publish:
+	bin/publish.sh
+
+pull:
+	bin/pull.sh
+
+push:
+	bin/push.sh
+
+share_config:
+	@:
+
+ship:
+	bin/ship.sh
+
+switch_back_to_remote:
+	@:
+
+test:
+	@:
