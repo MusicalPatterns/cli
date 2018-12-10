@@ -1,8 +1,8 @@
 build:
 	@:
 
-commit_recursively:
-	bin/commit_recursively.sh
+commit:
+	bin/commit.sh
 
 lint:
 	@:

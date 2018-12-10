@@ -4,9 +4,11 @@
 
 Uses your build command from your npm scripts in package.json.
 
-`musical-patterns commit_recursively MSG="v1.0.33: good stuff"`
+`musical-patterns commit MSG="v1.0.33: good stuff"`
 
-Generally meant to be run ad part of the ship command, but available if you're interested.
+Generally meant to be run ad part of the ship command, but available if you're interested. 
+
+Commits recursively (applying message to all submodules all the way down).
 
 `musical-patterns lint`
 
@@ -18,7 +20,7 @@ Publishes to npm.
 
 `musical-patterns pull`
 
-Pulls from Github, including all submodules (also updates them).
+Pulls from Github, including all submodules recursively (also updates them).
 
 `musical-patterns push`
 
