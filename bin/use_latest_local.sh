@@ -16,4 +16,11 @@ pushd ..
 	rm *.tgz
 popd
 
-npm i -D ../fake_npm_${REPO}
+npm list -dev -depth 0 | grep -m1 @musical-patterns/${REPO} > /dev/null 2>&1
+if [[ $? == 0 ]] ; then
+	npm i -D ../fake_npm_${REPO}
+fi
+npm list -prod -depth 0 | grep -m1 @musical-patterns/${REPO} > /dev/null 2>&1
+if [[ $? == 0 ]] ; then
+	npm i ../fake_npm_${REPO}
+fi
