@@ -54,7 +54,3 @@ Uses Jasmine, browser-env.
 `musical-patterns use_latest_local REPO=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.
-
-`musical-patterns update`
-
-Updates dependencies, recursively.
