@@ -2,10 +2,8 @@
 
 set -e
 
-echo "testing"
-echo "${PWD##*/}"
+CHECK_TO_MAKE_SURE_I_AM_RUNNING_AS_PART_OF_ANOTHER_MODULE_S_INSTALL="../../../"
 
-if [[ "${PWD##*/}" != "cli" ]] ; then
-	echo "sharing"
+if [[ -d "${CHECK_TO_MAKE_SURE_I_AM_RUNNING_AS_PART_OF_ANOTHER_MODULE_S_INSTALL}node_modules" ]] ; then
 	sh ./bin/share_config.sh
 fi
