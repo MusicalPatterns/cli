@@ -28,3 +28,5 @@ switch_back_to_remote:
 test:
 	@:
 
+update:
+	bin/update.sh
