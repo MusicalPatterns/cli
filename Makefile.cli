@@ -1,7 +1,7 @@
 build:
 	@:
 
-build_local:
+build_dev:
 	@:
 
 commit:

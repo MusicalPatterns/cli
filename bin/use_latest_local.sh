@@ -5,7 +5,7 @@ set -e
 rm -rf ../fake_npm_${REPO}
 
 pushd ../${REPO}/
-	make build_local
+	make build_dev
 	npm pack
 	mv *.tgz ..
 popd

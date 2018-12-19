@@ -4,7 +4,7 @@
 
 Defaults to compile typescript using the "library" style configuration, but you can override this in your `Makefile.*` file.
 
-`musical-patterns build_local`
+`musical-patterns build_dev`
 
 Same as above, but you can override separately (e.g. to set `mode: development` for `webpack`).
 Used by the `use_latest_local` command.
