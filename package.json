@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.88",
+  "version": "1.0.89",
   "bin": {
     "musical-patterns": "bin/index.sh"
   },
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@types/jasmine": "^3.3.4",
-    "@types/node": "^10.12.17",
+    "@types/node": "^10.12.18",
     "browser-env": "^3.2.5",
     "jasmine": "^3.3.1",
     "jasmine-spec-reporter": "^4.2.1",
