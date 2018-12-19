@@ -15,5 +15,6 @@
     "test/reporter.ts",
     "test/mockDom.ts"
   ],
-  "oneFailurePerSpec": false
+  "oneFailurePerSpec": false,
+  "random": false
 }
