@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-export JASMINE_CONFIG_PATH=${JASMINE_CONFIG_PATH}:=${CLI_DIR}test/jasmine.json
+export JASMINE_CONFIG_PATH=${JASMINE_CONFIG_PATH:=${CLI_DIR}test/jasmine.json}
 
 JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
 test -f "$JASMINE_PATH"
