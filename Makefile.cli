@@ -1,6 +1,9 @@
 build:
 	@:
 
+build_local:
+	@:
+
 commit:
 	bin/commit.sh
 

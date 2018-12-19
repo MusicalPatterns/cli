@@ -2,7 +2,12 @@
 
 `musical-patterns build`
 
-Uses your build command from your npm scripts in package.json.
+Defaults to compile typescript using the "library" style configuration, but you can override this in your `Makefile.*` file.
+
+`musical-patterns build_local`
+
+Same as above, but you can override separately (e.g. to set `mode: development` for `webpack`).
+Used by the `use_latest_local` command.
 
 `musical-patterns commit MSG="v1.0.33: good stuff"`
 
