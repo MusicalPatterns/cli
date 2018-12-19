@@ -1,13 +1,17 @@
+// tslint:disable:no-implicit-dependencies
 import { DisplayProcessor, SpecReporter } from 'jasmine-spec-reporter'
-import SuiteInfo = jasmine.SuiteInfo
+import { CustomReporterResult } from 'jasmine-spec-reporter/built/spec-reporter'
 
-class CustomProcessor extends DisplayProcessor {
-    public displayJasmineStarted(info: SuiteInfo, log: string): string {
-        return `TypeScript ${log}`
+class ExperimentalProcessor extends DisplayProcessor {
+    // tslint:disable-next-line:class-methods-use-this
+    public displaySuite(suite: CustomReporterResult, log: string): string {
+        return `is this thing on? ${log}`
     }
 }
 
-jasmine.getEnv().clearReporters()
-jasmine.getEnv().addReporter(new SpecReporter({
-    customProcessors: [ CustomProcessor ],
-}))
+jasmine.getEnv()
+    .clearReporters()
+jasmine.getEnv()
+    .addReporter(new SpecReporter({
+        customProcessors: [ ExperimentalProcessor ],
+    }))
