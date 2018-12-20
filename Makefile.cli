@@ -5,25 +5,25 @@ build_dev:
 	@:
 
 commit:
-	bin/commit.sh
+	@bin/commit.sh
 
 lint:
 	@:
 
 publish:
-	bin/publish.sh
+	@bin/publish.sh
 
 pull:
-	bin/pull.sh
+	@bin/pull.sh
 
 push:
-	bin/push.sh
+	@bin/push.sh
 
 share_config:
 	@:
 
 ship:
-	bin/ship.sh
+	@bin/ship.sh
 
 switch_back_to_remote:
 	@:
