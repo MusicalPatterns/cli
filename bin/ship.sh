@@ -4,8 +4,7 @@ set -e
 
 make test
 make lint
-
-VERSION=$(npm version patch)
+export VERSION=$(npm version patch)
 make publish
 git add .
 make commit MSG="${VERSION}: ${MSG}"
