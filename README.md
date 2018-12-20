@@ -21,7 +21,7 @@ Uses tslint.
 
 `musical-patterns publish`
 
-Publishes to npm.
+Patches and publishes to npm.
 
 `musical-patterns pull`
 
