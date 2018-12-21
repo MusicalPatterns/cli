@@ -15,5 +15,5 @@ share_file tslint.json
 share_file test/tslint.json
 share_file test/mockDom.ts
 share_file test/reporter.ts
-share_file test/jasmine.json
+share_file test/jasmine.js
 share_file Makefile
