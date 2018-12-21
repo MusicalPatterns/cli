@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ ${PATTERN} == "" ]] ; then
+if [[ ${PATTERN} == "" || ${PATTERN} == "ALL" ]] ; then
 	DIR="."
 else
 	DIR="./src/${PATTERN}"
