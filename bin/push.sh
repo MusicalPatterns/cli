@@ -3,7 +3,7 @@
 set -e
 
 push_recursively() {
-	git push
+	git push || return
 	git submodule foreach push_recursively
 }
 export -f push_recursively
