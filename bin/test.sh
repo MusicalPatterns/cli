@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 
-export JASMINE_CONFIG_PATH=${JASMINE_CONFIG_PATH:=${CLI_DIR}test/jasmine.json}
+if [[ ${PATTERN} == "" ]] ; then
+	export JASMINE_CONFIG_PATH=${CLI_DIR}test/jasmine.json
+else
+	export JASMINE_CONFIG_PATH=${src/${PATTERN}/test/jasmine.js}
+fi
 
 JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
 test -f "$JASMINE_PATH"
