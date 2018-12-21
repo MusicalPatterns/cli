@@ -12,7 +12,8 @@ JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${CLI_DIR}${JA
 
 tsc -p tsconfig-node.json
 if [[ $? == 0 ]] ; then
-	PATTERN=${PATTERN} ts-node -P tsconfig-node.json ${JASMINE_BINARY}
+	export PATTERN=${PATTERN}
+	ts-node -P tsconfig-node.json ${JASMINE_BINARY}
 else
 	exit 1
 fi
