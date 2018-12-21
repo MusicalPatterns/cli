@@ -20,5 +20,4 @@ share_file test/reporter.ts
 share_file test/jasmine.js
 share_file Makefile
 share_file .gitattributes
-share_file .gitignore
 share_file LICENSE
