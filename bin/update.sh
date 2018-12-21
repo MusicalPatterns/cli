@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-echo "Please run \`npm update\` instead".
+echo "Please run 'npm update' instead".
