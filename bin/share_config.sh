@@ -7,6 +7,8 @@ share_file() {
 	cp ${FILE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
 }
 
+mkdir -p ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}test
+
 share_file tsconfig-common.json
 share_file tsconfig-library.json
 share_file tsconfig.json
