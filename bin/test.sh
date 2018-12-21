@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 if [[ ${PATTERN} == "" ]] ; then
-	export JASMINE_CONFIG_PATH=${CLI_DIR}test/jasmine.js
+	export JASMINE_CONFIG_PATH="${CLI_DIR}test/jasmine.js"
 else
-	export JASMINE_CONFIG_PATH=${src/${PATTERN}/test/jasmine.js}
+	export JASMINE_CONFIG_PATH="src/${PATTERN}/test/jasmine.js"
 fi
 
 JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
