@@ -8,6 +8,7 @@ DEFAULT_BUILD_CMD="tsc -p tsconfig-library.json"
 CUSTOM_DIR="${2}"
 DIR=${CUSTOM_DIR:=.}
 
+mkdir -p ${DIR}/dist/
 rm -r ${DIR}/dist/* > /dev/null 2>&1 || true
 touch ${DIR}/dist/.gitkeep
 
