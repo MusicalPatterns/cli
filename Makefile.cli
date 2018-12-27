@@ -7,6 +7,9 @@ build:
 build_dev:
 	@:
 
+clean_updates:
+	@bin/clean_updates.sh
+
 commit:
 	@bin/commit.sh
 
