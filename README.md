@@ -48,6 +48,10 @@ The omni-command.
 - pushes
 - publishes
 
+`musical-patterns stash`
+
+Stashes recursively.
+
 `musical-patterns switch_back_to_remote REPO=performer`
 
 Undoes the above.
