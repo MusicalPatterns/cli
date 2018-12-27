@@ -3,3 +3,4 @@
 set -e
 
 npm rm npm-check-updates npm-upgrade
+npm i
