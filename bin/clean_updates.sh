@@ -3,8 +3,7 @@
 set -e
 
 pushd ${DIR:=.}
-	rm package-lock.json || true
-	rm -rf node_modules || true
+	rm -rf node_modules package-lock.json > /dev/null 2>&1 || true
 	npm rm npm-check-updates npm-upgrade || true
 	npm i
 popd
