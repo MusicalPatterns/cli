@@ -2,5 +2,7 @@
 
 set -e
 
-npm rm npm-check-updates npm-upgrade
-npm i
+pushd ${DIR:=.}
+	npm rm npm-check-updates npm-upgrade
+	npm i
+popd
