@@ -2,4 +2,4 @@
 
 set -e
 
-git submodule foreach --recusive 'git stash pop'
+git submodule foreach --recursive 'git stash pop'
