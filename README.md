@@ -48,9 +48,13 @@ The omni-command.
 - pushes
 - publishes
 
-`musical-patterns stash`
+`musical-patterns stash MSG="why i'm stashing"`
 
 Stashes recursively.
+
+`musical-patterns stash_pop`
+
+Pops stashes recursively.
 
 `musical-patterns switch_back_to_remote REPO=performer`
 
