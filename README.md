@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/MusicalPatterns/cli.svg?branch=master)](https://travis-ci.com/MusicalPatterns/cli)
+
 # Musical Patterns CLI
 
 `musical-patterns build`
