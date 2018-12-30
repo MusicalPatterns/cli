@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 
