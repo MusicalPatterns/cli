@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "Please run 'npm update' instead".

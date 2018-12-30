@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [[ ${PATTERN} == "" || ${PATTERN} == "ALL" ]] ; then
 	export JASMINE_CONFIG_PATH="${CLI_DIR}test/jasmine.js"
