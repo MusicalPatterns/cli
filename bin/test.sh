@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ${PATTERN} = "" -o ${PATTERN} = "ALL" ] ; then
+if [ "${PATTERN}" = "" -o "${PATTERN}" = "ALL" ] ; then
 	export JASMINE_CONFIG_PATH="${CLI_DIR}test/jasmine.js"
 	export TSCONFIG="tsconfig-node.json"
 else
