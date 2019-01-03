@@ -3,9 +3,9 @@
   "compilerOptions": {
     "declaration": true,
     "module": "commonjs",
-    "rootDir": "src",
+    "outDir": "dist",
     "resolveJsonModule": true,
-    "outDir": "dist"
+    "rootDir": "src"
   },
   "include": [
     "src"
