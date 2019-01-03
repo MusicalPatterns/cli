@@ -22,3 +22,11 @@ share_file Makefile
 share_file .gitattributes
 share_file .travis.yml
 share_file LICENSE
+
+share_file_with_npm_struggles() {
+	FILE="$1"
+	cp "${FILE}.for-sharing" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
+}
+
+share_file_with_npm_struggles .gitignore
+share_file_with_npm_struggles .npmignore
