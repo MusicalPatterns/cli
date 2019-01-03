@@ -5,9 +5,10 @@ export PATH=${PATH}:./node_modules/.bin/:${CLI_DIR}node_modules/.bin/
 
 CMD="$1"
 ARG="$2"
+NEXT_ARG="$3"
 
 if [[ -f ${CLI_DIR}bin/${CMD}.sh ]] ; then
-	sh ${CLI_DIR}bin/${CMD}.sh "$ARG"
+	sh ${CLI_DIR}bin/${CMD}.sh "$ARG" "$NEXT_ARG"
 else
 	echo "'musical-patterns ${CMD}' is not a defined CLI command."
 fi
