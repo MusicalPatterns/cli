@@ -25,7 +25,7 @@ share_file LICENSE
 
 share_file_with_npm_struggles() {
 	FILE="$1"
-	cp share/${FILE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
+	cp "${FILE}.for-sharing" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
 }
 
 share_file_with_npm_struggles .gitignore
