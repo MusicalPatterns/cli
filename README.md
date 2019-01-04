@@ -65,6 +65,10 @@ This command is run automatically with `npm` `postinstall` when this is installe
 
 Replaces the common configuration files in your repo with the current standards for Musical Patterns.
 
+`musical-patterns share_file`
+
+Shares a specific file from here into your repo. This is the command that `share_config` uses for each file.
+
 `musical-patterns ship MSG="improves the tests"`
 
 The omni-command. 
