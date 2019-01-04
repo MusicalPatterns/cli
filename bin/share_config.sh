@@ -2,19 +2,19 @@
 
 ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../.."
 
-make share_file FILE=tsconfig-common.json
-make share_file FILE=tsconfig-library.json
-make share_file FILE=tsconfig.json
-make share_file FILE=tsconfig-node.json
-make share_file FILE=tslint.json
-make share_file FILE=test/tslint.json
-make share_file FILE=test/mockDom.ts
-make share_file FILE=test/reporter.ts
-make share_file FILE=test/jasmine.js
-make share_file FILE=Makefile
-make share_file FILE=.gitattributes
-make share_file FILE=.travis.yml
-make share_file FILE=LICENSE
+FILE=tsconfig-common.json ./bin/share_file.sh
+FILE=tsconfig-library.json ./bin/share_file.sh
+FILE=tsconfig.json ./bin/share_file.sh
+FILE=tsconfig-node.json ./bin/share_file.sh
+FILE=tslint.json ./bin/share_file.sh
+FILE=test/tslint.json ./bin/share_file.sh
+FILE=test/mockDom.ts ./bin/share_file.sh
+FILE=test/reporter.ts ./bin/share_file.sh
+FILE=test/jasmine.js ./bin/share_file.sh
+FILE=Makefile ./bin/share_file.sh
+FILE=.gitattributes ./bin/share_file.sh
+FILE=.travis.yml ./bin/share_file.sh
+FILE=LICENSE ./bin/share_file.sh
 
 share_file_with_npm_struggles() {
 	FILE="$1"
