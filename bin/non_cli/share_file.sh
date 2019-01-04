@@ -8,7 +8,11 @@ make_dir_for_file() {
 	DIR=$(grep -Po '.*(?=\/)' <<< "${FILE}")
 	echo "here is a dir"
 	echo ${DIR}
-	[[ ${DIR} != "" ]] && mkdir -p ${DIR}
+	if [[ ${DIR} != "" ]] ; then
+		echo "are you going to make it?"
+		mkdir -p ${DIR}
+		mkdir -p ../../../${DIR}
+	fi
 }
 
 share_file() {
