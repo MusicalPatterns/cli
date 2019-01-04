@@ -11,7 +11,7 @@ fi
 commit_recursively() {
 	git submodule foreach commit_recursively || return
 	git add . || return
-	git commit -m "${VERSION_PREFIX}${MSG}" || true
+	git commit --allow-empty-message -m "${VERSION_PREFIX}${MSG}" || true
 }
 export -f commit_recursively
 commit_recursively
