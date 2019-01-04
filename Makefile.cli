@@ -22,9 +22,6 @@ pull:
 push:
 	@bin/push.sh
 
-share_config:
-	@:
-
 ship:
 	@bin/ship.sh
 

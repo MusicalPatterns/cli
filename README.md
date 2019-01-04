@@ -59,16 +59,6 @@ Pulls from Github, including all submodules recursively (also updates them).
 
 Pushes to Github, including all submodules.
 
-`musical-patterns share_config`
-
-This command is run automatically with `npm` `postinstall` when this is installed as an npm package, but can be re-run at any time. 
-
-Replaces the common configuration files in your repo with the current standards for Musical Patterns.
-
-`musical-patterns share_file`
-
-Shares a specific file from here into your repo. This is the command that `share_config` uses for each file.
-
 `musical-patterns ship MSG="improves the tests"`
 
 The omni-command. 
