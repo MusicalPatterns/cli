@@ -11,10 +11,6 @@ Defaults to compile typescript using the "library" style configuration, but you 
 Same as above, but you can override separately (e.g. to set `mode: development` for `webpack`).
 Used by the `use_latest_local` command.
 
-`musical-patterns clean_updates`
-
-This magical incantation is currently known to resolve a bizarre failure with `npm`.
-
 `musical-patterns commit MSG="v1.0.33: good stuff"`
 
 Generally meant to be run ad part of the ship command, but available if you're interested. 
