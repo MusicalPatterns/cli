@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Please run 'npm update' instead. I cannot do it for you, as you would be trying to delete me as I tried."
+echo "Please run 'npm update' instead. I cannot do it for you, as I would try to delete myself as part of updating myself."
