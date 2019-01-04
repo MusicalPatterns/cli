@@ -10,6 +10,15 @@ These configuration files are for building, testing, linting, publishing, storin
 
 - .gitattributes
 - .gitignore
+- .idea/codeStyles/codeStyleConfig.xml
+- .idea/codeStyles/Project.xml
+- .idea/inspectionProfiles/Project_Default.xml
+- .idea/jsLinters/tslint.xml
+- .idea/compiler.xml
+- .idea/encodings.xml
+- .idea/jsLibraryMappings.xml
+- .idea/misc.xml
+- .idea/watcherTasks.xml
 - .npmignore
 - .travis.yml
 - LICENSE
