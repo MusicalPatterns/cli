@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../.."
+ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 
 make_dir_for_file() {
 	FILE="$1"
