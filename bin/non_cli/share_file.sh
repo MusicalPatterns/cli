@@ -4,8 +4,10 @@ ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 
 make_dir_for_file() {
 	FILE="$1"
-
+	echo "i am supposed to make dir for file"
 	DIR=$(grep -Po '.*(?=\/)' <<< "${FILE}")
+	echo "here is a dir"
+	echo ${DIR}
 	[[ ${DIR} != "" ]] && mkdir -p ${DIR}
 }
 
