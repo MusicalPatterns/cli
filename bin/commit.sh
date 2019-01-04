@@ -2,6 +2,9 @@
 
 set -e
 
+echo "version?"
+echo ${VERSION}
+
 if [[ ${VERSION} == "" ]] ; then
 	VERSION_PREFIX=""
 else

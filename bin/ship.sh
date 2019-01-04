@@ -6,4 +6,4 @@ make test
 make lint
 make publish
 make commit
-make push
+#make push
