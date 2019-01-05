@@ -6,10 +6,11 @@
       </value>
     </option>
     <option name="LINE_SEPARATOR" value="&#10;" />
-    <JSCodeStyleSettings version="0">
+    <JSCodeStyleSettings version="1">
       <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
       <option name="FORCE_SEMICOLON_STYLE" value="true" />
       <option name="FILE_NAME_STYLE" value="CAMEL_CASE" />
+      <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
       <option name="USE_DOUBLE_QUOTES" value="false" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
       <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
