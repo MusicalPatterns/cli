@@ -6,7 +6,11 @@ var __extends = (this && this.__extends) || (function () {
             d.__proto__ = b
         }) ||
         function (d, b) {
-            for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]
+            for (var p in b) {
+                if (b.hasOwnProperty(p)) {
+                    d[ p ] = b[ p ]
+                }
+            }
         }
     return function (d, b) {
         extendStatics(d, b)
@@ -21,7 +25,8 @@ var __extends = (this && this.__extends) || (function () {
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) {
         Object.defineProperty(cooked, 'raw', { value: raw })
-    } else {
+    }
+    else {
         cooked.raw = raw
     }
     return cooked
@@ -42,11 +47,11 @@ var Rule = /** @class */ (function (_super) {
     /* tslint:disable:object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-import-paths-without-names',
-        description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject(['\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.'], ['\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.']))),
-        rationale: Lint.Utils.dedent(templateObject_2 || (templateObject_2 = __makeTemplateObject(['\n            This should encourage awareness of module boundaries.'], ['\n            This should encourage awareness of module boundaries.']))),
+        description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.' ], [ '\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.' ]))),
+        rationale: Lint.Utils.dedent(templateObject_2 || (templateObject_2 = __makeTemplateObject([ '\n            This should encourage awareness of module boundaries.' ], [ '\n            This should encourage awareness of module boundaries.' ]))),
         optionsDescription: 'None.',
         options: {},
-        optionExamples: [true],
+        optionExamples: [ true ],
         type: 'functionality',
         typescriptOnly: false,
         hasFix: false,
@@ -58,7 +63,7 @@ exports.Rule = Rule
 
 function walk(ctx) {
     for (var _i = 0, _a = tsutils_1.findImports(ctx.sourceFile, 31 /* All */); _i < _a.length; _i++) {
-        var name_1 = _a[_i]
+        var name_1 = _a[ _i ]
         if (importPathLacksName(name_1.text)) {
             ctx.addFailureAtNode(name_1, Rule.FAILURE_STRING)
         }

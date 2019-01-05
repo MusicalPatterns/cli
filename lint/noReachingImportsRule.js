@@ -5,7 +5,11 @@ var __extends = (this && this.__extends) || (function () {
             d.__proto__ = b
         }) ||
         function (d, b) {
-            for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]
+            for (var p in b) {
+                if (b.hasOwnProperty(p)) {
+                    d[ p ] = b[ p ]
+                }
+            }
         }
     return function (d, b) {
         extendStatics(d, b)
@@ -20,7 +24,8 @@ var __extends = (this && this.__extends) || (function () {
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) {
         Object.defineProperty(cooked, 'raw', { value: raw })
-    } else {
+    }
+    else {
         cooked.raw = raw
     }
     return cooked
@@ -41,11 +46,11 @@ var Rule = /** @class */ (function (_super) {
     /* tslint:disable:object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-reaching-imports',
-        description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject(['\n            Disallows importing any submodule.'], ['\n            Disallows importing any submodule.']))),
-        rationale: Lint.Utils.dedent(templateObject_2 || (templateObject_2 = __makeTemplateObject(['\n            I hope this will help prevent circular dependencies.'], ['\n            I hope this will help prevent circular dependencies.']))),
+        description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            Disallows importing any submodule.' ], [ '\n            Disallows importing any submodule.' ]))),
+        rationale: Lint.Utils.dedent(templateObject_2 || (templateObject_2 = __makeTemplateObject([ '\n            I hope this will help prevent circular dependencies.' ], [ '\n            I hope this will help prevent circular dependencies.' ]))),
         optionsDescription: 'None.',
         options: {},
-        optionExamples: [true],
+        optionExamples: [ true ],
         type: 'functionality',
         typescriptOnly: false,
         hasFix: true,
@@ -57,7 +62,7 @@ exports.Rule = Rule
 
 function walk(ctx) {
     for (var _i = 0, _a = tsutils_1.findImports(ctx.sourceFile, 31 /* All */); _i < _a.length; _i++) {
-        var name_1 = _a[_i]
+        var name_1 = _a[ _i ]
         if (isSubmodulePath(name_1.text)) {
             var fix = new Lint.Replacement(name_1.getStart(), name_1.getWidth(), fixedSubmodulePath(name_1.text))
             ctx.addFailureAtNode(name_1, Rule.FAILURE_STRING, fix)
@@ -67,7 +72,7 @@ function walk(ctx) {
 
 function isSubmodulePath(path) {
     var steps = path.split('/')
-    if (steps[0][0] === '@') {
+    if (steps[ 0 ][ 0 ] === '@') {
         return false
     }
     var badSteps = 0
