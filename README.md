@@ -59,6 +59,7 @@ Uses tslint.
 `musical-patterns publish`
 
 Patches and publishes to npm.
+It tries to be nice and not publish if your working tree is clean, but if you just accidentally cleaned it without publishing, you can provide `FORCE=true` and it will publish anyway.
 
 `musical-patterns pull`
 
