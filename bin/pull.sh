@@ -3,8 +3,8 @@
 set -e
 
 pull_recursively() {
-	git checkout master || return
 	git submodule update --init --recursive || return
+	git checkout master || return
 	git pull -r || return
 	git submodule foreach pull_recursively
 }
