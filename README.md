@@ -88,7 +88,7 @@ Stashes recursively.
 
 Pops matching stashes recursively.
 
-`musical-patterns switch_back_to_remote REPO=performer`
+`musical-patterns switch_back_to_remote SERVICE=performer`
 
 Undoes the `use_latest_local` command.
 
@@ -96,6 +96,6 @@ Undoes the `use_latest_local` command.
 
 Runs your tests.
 
-`musical-patterns use_latest_local REPO=performer`
+`musical-patterns use_latest_local SERVICE=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.
