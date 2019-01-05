@@ -7,7 +7,7 @@ CMD="$1"
 ARG="$2"
 
 if [[ -f ${CLI_DIR}bin/${CMD}.sh ]] ; then
-	sh ${CLI_DIR}bin/${CMD}.sh "$ARG"
+	bash ${CLI_DIR}bin/${CMD}.sh "$ARG"
 else
 	echo "'musical-patterns ${CMD}' is not a defined CLI command."
 fi

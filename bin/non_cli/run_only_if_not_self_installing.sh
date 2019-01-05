@@ -1,8 +1,4 @@
-#!/bin/bash
-
-echo "bash version in the file with the export"
-bash --version
-echo ${BASH_VERSION}
+#!/usr/bin/env bash
 
 CHECK_TO_MAKE_SURE_I_AM_RUNNING_AS_PART_OF_ANOTHER_MODULE_S_INSTALL="../../../"
 
