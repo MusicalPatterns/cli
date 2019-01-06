@@ -77,6 +77,7 @@ Pushes to Github, including all submodules.
 
 The omni-command. 
 
+- confirms that you haven't modified any of the standard configuration (if you have, consider whether all other repos should change similarly, and if so, change it here in the CLI; otherwise, figure some other way out)
 - runs tests
 - runs the linter
 - patches the version
