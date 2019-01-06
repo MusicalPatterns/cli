@@ -18,15 +18,14 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 exports.__esModule = true;
-var tslint_1 = require("tslint");
 var Lint = require("tslint");
+var tslint_1 = require("tslint");
 var Rule = /** @class */ (function (_super) {
     __extends(Rule, _super);
     function Rule() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
-        console.log(sourceFile.fileName);
         var materialsFilenames = [
             'blocks',
             'constants',
@@ -43,10 +42,10 @@ var Rule = /** @class */ (function (_super) {
             'types',
             'wholes',
         ];
-        if (sourceFile.fileName.includes('src/materials/') && materialsFilenames.includes(sourceFile.fileName)) {
-            return [];
+        if (sourceFile.fileName.includes('src/materials/') && !materialsFilenames.includes(sourceFile.fileName)) {
+            return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
         }
-        return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
+        return [];
     };
     /* tslint:disable:object-literal-sort-keys */
     Rule.metadata = {

@@ -1,7 +1,7 @@
 /* tslint:disable */
 
-import { RuleFailure } from 'tslint'
 import * as Lint from 'tslint'
+import { RuleFailure } from 'tslint'
 import * as ts from 'typescript'
 
 export class Rule extends Lint.Rules.AbstractRule {
@@ -23,7 +23,6 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static FAILURE_STRING = 'Keep the materials folder standardized. Only certain filenames are allowed here.'
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-        console.log(sourceFile.fileName)
         const materialsFilenames: string[] = [
             'blocks',
             'constants',
@@ -40,10 +39,10 @@ export class Rule extends Lint.Rules.AbstractRule {
             'types',
             'wholes',
         ]
-        if (sourceFile.fileName.includes('src/materials/') && materialsFilenames.includes(sourceFile.fileName)) {
-            return []
+        if (sourceFile.fileName.includes('src/materials/') && !materialsFilenames.includes(sourceFile.fileName)) {
+            return [ new RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName) ]
         }
 
-        return [ new RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)]
+        return []
     }
 }
