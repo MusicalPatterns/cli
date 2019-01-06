@@ -12,4 +12,4 @@ check_match() {
 
 while read SHARED_FILE ; do
 	check_match "$SHARED_FILE"
-done < bin/non_cli/shared_files.txt
+done < node_modules/@musical-patterns/cli/bin/non_cli/shared_files.txt
