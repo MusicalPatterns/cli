@@ -23,26 +23,34 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static FAILURE_STRING = 'Keep the materials folder standardized. Only certain filenames are allowed here.'
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-        const materialsFilenames: string[] = [
-            'blocks',
-            'constants',
-            'entities',
-            'index',
-            'indexForTest',
-            'notes',
-            'parts',
-            'pieces',
-            'scales',
-            'scalars',
-            'renderings',
-            'segments',
-            'types',
-            'wholes',
-        ]
-        if (sourceFile.fileName.includes('src/materials/') && !materialsFilenames.includes(sourceFile.fileName)) {
+        if (sourceFile.fileName.includes('src/materials/') && filenameIsNotAllowed(sourceFile.fileName)) {
             return [ new RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName) ]
         }
 
         return []
     }
 }
+
+const filenameIsNotAllowed: (fileName: string) => boolean =
+    (fileName: string): boolean => {
+        const allowedMaterialsFilenames: string[] = [
+            'blocks.ts',
+            'constants.ts',
+            'entities.ts',
+            'index.ts',
+            'indexForTest.ts',
+            'notes.ts',
+            'parts.ts',
+            'pieces.ts',
+            'scales.ts',
+            'scalars.ts',
+            'renderings.ts',
+            'segments.ts',
+            'types.ts',
+            'wholes.ts',
+        ]
+
+        return allowedMaterialsFilenames.every((potentialFilename: string): boolean => {
+            return !fileName.includes(potentialFilename)
+        })
+    }

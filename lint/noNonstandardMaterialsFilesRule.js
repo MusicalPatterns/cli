@@ -26,23 +26,7 @@ var Rule = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
-        var materialsFilenames = [
-            'blocks',
-            'constants',
-            'entities',
-            'index',
-            'indexForTest',
-            'notes',
-            'parts',
-            'pieces',
-            'scales',
-            'scalars',
-            'renderings',
-            'segments',
-            'types',
-            'wholes',
-        ];
-        if (sourceFile.fileName.includes('src/materials/') && !materialsFilenames.includes(sourceFile.fileName)) {
+        if (sourceFile.fileName.includes('src/materials/') && filenameIsNotAllowed(sourceFile.fileName)) {
             return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
         }
         return [];
@@ -63,4 +47,25 @@ var Rule = /** @class */ (function (_super) {
     return Rule;
 }(Lint.Rules.AbstractRule));
 exports.Rule = Rule;
+var filenameIsNotAllowed = function (fileName) {
+    var allowedMaterialsFilenames = [
+        'blocks.ts',
+        'constants.ts',
+        'entities.ts',
+        'index.ts',
+        'indexForTest.ts',
+        'notes.ts',
+        'parts.ts',
+        'pieces.ts',
+        'scales.ts',
+        'scalars.ts',
+        'renderings.ts',
+        'segments.ts',
+        'types.ts',
+        'wholes.ts',
+    ];
+    return allowedMaterialsFilenames.every(function (potentialFilename) {
+        return !fileName.includes(potentialFilename);
+    });
+};
 var templateObject_1, templateObject_2;
