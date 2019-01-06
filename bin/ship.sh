@@ -2,6 +2,7 @@
 
 set -e
 
+make match_config
 make test
 make lint
 make publish

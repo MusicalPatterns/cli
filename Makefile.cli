@@ -13,6 +13,9 @@ commit:
 lint:
 	@:
 
+match_config:
+	@:
+
 publish:
 	@bin/publish.sh
 
