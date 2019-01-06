@@ -8,7 +8,7 @@ check_match() {
 	set +e
 	cmp -s "${FILE}" "node_modules/@musical-patterns/cli/${FILE}"
 	if [[ $? != 0 ]] ; then
-		echo "mismatch: ${FILE}"
+		echo "mismatch against standardized configuration: ${FILE}"
 		set -e
 		return 1
 	fi
