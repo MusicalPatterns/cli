@@ -33,24 +33,24 @@ export class Rule extends Lint.Rules.AbstractRule {
 
 const filenameIsNotAllowed: (fileName: string) => boolean =
     (fileName: string): boolean => {
-        const allowedMaterialsFilenames: string[] = [
-            'blocks.ts',
-            'constants.ts',
-            'entities.ts',
-            'index.ts',
-            'indexForTest.ts',
-            'notes.ts',
-            'parts.ts',
-            'pieces.ts',
-            'scales.ts',
-            'scalars.ts',
-            'renderings.ts',
-            'segments.ts',
-            'types.ts',
-            'wholes.ts',
+        const allowedMaterialsFilenamesOrParentDirectories: string[] = [
+            'blocks',
+            'constants',
+            'entities',
+            'index',
+            'indexForTest',
+            'notes',
+            'parts',
+            'pieces',
+            'scales',
+            'scalars',
+            'renderings',
+            'segments',
+            'types',
+            'wholes',
         ]
 
-        return allowedMaterialsFilenames.every((potentialFilename: string): boolean => {
-            return !fileName.includes(potentialFilename)
+        return allowedMaterialsFilenamesOrParentDirectories.every((potentialFilename: string): boolean => {
+            return !fileName.includes(`${potentialFilename}.ts`) && !fileName.includes(`${potentialFilename}/`)
         })
     }

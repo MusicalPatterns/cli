@@ -48,24 +48,24 @@ var Rule = /** @class */ (function (_super) {
 }(Lint.Rules.AbstractRule));
 exports.Rule = Rule;
 var filenameIsNotAllowed = function (fileName) {
-    var allowedMaterialsFilenames = [
-        'blocks.ts',
-        'constants.ts',
-        'entities.ts',
-        'index.ts',
-        'indexForTest.ts',
-        'notes.ts',
-        'parts.ts',
-        'pieces.ts',
-        'scales.ts',
-        'scalars.ts',
-        'renderings.ts',
-        'segments.ts',
-        'types.ts',
-        'wholes.ts',
+    var allowedMaterialsFilenamesOrParentDirectories = [
+        'blocks',
+        'constants',
+        'entities',
+        'index',
+        'indexForTest',
+        'notes',
+        'parts',
+        'pieces',
+        'scales',
+        'scalars',
+        'renderings',
+        'segments',
+        'types',
+        'wholes',
     ];
-    return allowedMaterialsFilenames.every(function (potentialFilename) {
-        return !fileName.includes(potentialFilename);
+    return allowedMaterialsFilenamesOrParentDirectories.every(function (potentialFilename) {
+        return !fileName.includes(potentialFilename + ".ts") && !fileName.includes(potentialFilename + "/");
     });
 };
 var templateObject_1, templateObject_2;
