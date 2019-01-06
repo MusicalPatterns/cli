@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-set -e
-
 check_match() {
 	FILE="$1"
 
-	if [[ cmp -s "${FILE}" node_modules/@musical-patterns/cli"${FILE}" ]] ; then
+	cmp -s "${FILE}" "node_modules/@musical-patterns/cli/${FILE}"
+	if [[ $? != 0 ]] ; then
 		echo "mismatch: ${FILE}"
 		return 1
-	else
-		echo "match ${FILE}"
 	fi
 }
 
@@ -35,5 +32,3 @@ check_match .idea/encodings.xml
 check_match .idea/jsLibraryMappings.xml
 check_match .idea/misc.xml
 check_match .idea/watcherTasks.xml
-check_match .gitignore
-check_match .npmignore
