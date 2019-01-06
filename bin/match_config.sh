@@ -5,7 +5,12 @@ set -e
 check_match() {
 	FILE="$1"
 
-	cmp -s "${FILE}" node_modules/@musical-patterns/cli"${FILE}"
+	if [[ cmp -s "${FILE}" node_modules/@musical-patterns/cli"${FILE}" ]] ; then
+		echo "mismatch: ${FILE}"
+		return 1
+	else
+		echo "match ${FILE}"
+	fi
 }
 
 check_match tsconfig-common.json
