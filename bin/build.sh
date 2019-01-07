@@ -3,7 +3,7 @@
 set -e
 
 BUILD_CMD="${1}"
-DEFAULT_BUILD_CMD="tsc -p tsconfig-library.json"
+DEFAULT_BUILD_CMD="tsc -p tsconfig.library.json"
 
 mkdir -p dist/
 rm -r dist/* > /dev/null 2>&1 || true

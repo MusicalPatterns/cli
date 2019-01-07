@@ -27,10 +27,10 @@ These configuration files are for building, testing, linting, publishing, storin
 - test/mockDom.ts
 - test/reporter.ts
 - test/jasmine.js
-- tsconfig-common.json
-- tsconfig-library.json
+- tsconfig.common.json
+- tsconfig.library.json
 - tsconfig.json
-- tsconfig-node.json
+- tsconfig.node.json
 - tslint.json
 
 The Makefile aliases the CLI commands as `make` commands.

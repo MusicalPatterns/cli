@@ -1,7 +1,7 @@
-tsconfig-common.json
-tsconfig-library.json
+tsconfig.common.json
+tsconfig.library.json
 tsconfig.json
-tsconfig-node.json
+tsconfig.node.json
 tslint.json
 test/tslint.json
 test/mockDom.ts

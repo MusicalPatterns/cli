@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export JASMINE_CONFIG_PATH="test/jasmine.js"
-export TSCONFIG="tsconfig-node.json"
+export TSCONFIG="tsconfig.node.json"
 
 JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
 test -f "$JASMINE_PATH"
