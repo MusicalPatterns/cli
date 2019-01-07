@@ -37,43 +37,43 @@ The Makefile aliases the CLI commands as `make` commands.
 
 ## the CLI commands
 
-`musical-patterns build`
+`musical-patterns-cli build`
 
 Defaults to compile typescript using the "library" style configuration, but you can override this in your `Makefile.*` file.
 
-`musical-patterns build_dev`
+`musical-patterns-cli build_dev`
 
 Same as above, but you can override separately (e.g. to set `mode: development` for `webpack`).
 Used by the `use_latest_local` command.
 
-`musical-patterns check_match`
+`musical-patterns-cli check_match`
 
 Confirm that your configuration files match the standards here in the CLI repo.
 
-`musical-patterns commit MSG="v1.0.33: good stuff"`
+`musical-patterns-cli commit MSG="v1.0.33: good stuff"`
 
 Generally meant to be run ad part of the ship command, but available if you're interested. 
 
 Commits recursively (applying message to all submodules all the way down).
 
-`musical-patterns lint`
+`musical-patterns-cli lint`
 
 Uses tslint.
 
-`musical-patterns publish`
+`musical-patterns-cli publish`
 
 Patches and publishes to npm.
 It tries to be nice and not publish if your working tree is clean, but if you just accidentally cleaned it without publishing, you can provide `FORCE=true` and it will publish anyway.
 
-`musical-patterns pull`
+`musical-patterns-cli pull`
 
 Pulls from Github, including all submodules recursively (also updates them).
 
-`musical-patterns push`
+`musical-patterns-cli push`
 
 Pushes to Github, including all submodules.
 
-`musical-patterns ship MSG="improves the tests"`
+`musical-patterns-cli ship MSG="improves the tests"`
 
 The omni-command. 
 
@@ -85,22 +85,22 @@ The omni-command.
 - pushes
 - publishes
 
-`musical-patterns stash MSG="stashing this important thing"`
+`musical-patterns-cli stash MSG="stashing this important thing"`
 
 Stashes recursively.
 
-`musical-patterns stash_pop MSG="stashing this important thing"`
+`musical-patterns-cli stash_pop MSG="stashing this important thing"`
 
 Pops matching stashes recursively.
 
-`musical-patterns switch_back_to_remote SERVICE=performer`
+`musical-patterns-cli switch_back_to_remote SERVICE=performer`
 
 Undoes the `use_latest_local` command.
 
-`musical-patterns test`
+`musical-patterns-cli test`
 
 Runs your tests.
 
-`musical-patterns use_latest_local SERVICE=performer`
+`musical-patterns-cli use_latest_local SERVICE=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.

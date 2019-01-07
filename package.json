@@ -1,8 +1,8 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.241",
+  "version": "1.0.242",
   "bin": {
-    "musical-patterns": "bin/index.sh"
+    "musical-patterns-cli": "bin/index.sh"
   },
   "scripts": {
     "postinstall": "bash ./bin/non_cli/postinstall.sh"
