@@ -21,4 +21,3 @@ LICENSE
 .idea/misc.xml
 .idea/watcherTasks.xml
 .npmignore
-gitignore

@@ -6,7 +6,7 @@ check_match() {
 	FILE="$1"
 
 	set +e
-	cmp -s "${FILE}" "node_modules/@musical-patterns/cli/${FILE}"
+	cmp -s "${FILE}" "node_modules/@musical-patterns/cli/share/${FILE}"
 	if [[ $? != 0 ]] ; then
 		echo "mismatch against standardized configuration: ${FILE}"
 		set -e
