@@ -4,7 +4,7 @@ set -e
 
 VERSION=$(cat package.json 2>/dev/null | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
 
-if [[ ${VERSION} == "" ]] ; then
+if [[ "${VERSION}" == "" ]] ; then
 	VERSION_PREFIX=""
 else
 	VERSION_PREFIX="${VERSION}: "
