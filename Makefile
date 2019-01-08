@@ -8,7 +8,7 @@ Makefile:
 build:
 	@:
 
-build_dev:
+build_local:
 	@:
 
 commit:

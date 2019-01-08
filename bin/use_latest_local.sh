@@ -5,7 +5,7 @@ set -e
 rm -rf ../fake_npm_${SERVICE}
 
 pushd ../${SERVICE}/ > /dev/null 2>&1
-	make build_dev
+	make build_local
 	npm pack
 	mv *.tgz ..
 popd > /dev/null 2>&1
