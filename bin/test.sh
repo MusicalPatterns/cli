@@ -9,7 +9,7 @@ JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${CLI_DIR}${JA
 
 tsc -p ${TSCONFIG}
 if [[ $? == 0 ]] ; then
-	ts-node -P ${TSCONFIG} ${JASMINE_BINARY}
+	NODE_ENV=test ts-node -P ${TSCONFIG} ${JASMINE_BINARY}
 else
 	exit 1
 fi
