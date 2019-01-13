@@ -14,6 +14,9 @@ build_local:
 commit:
 	@bin/commit.sh
 
+fast_ship:
+	@bin/fast_ship.sh
+
 lint:
 	@:
 

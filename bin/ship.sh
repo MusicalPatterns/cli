@@ -5,6 +5,4 @@ set -e
 make match_config
 make test
 make lint
-make publish
-make commit
-make push
+make fast_ship

@@ -56,6 +56,10 @@ Generally meant to be run ad part of the ship command, but available if you're i
 
 Commits recursively (applying message to all submodules all the way down).
 
+`musical-patterns-cli fast_ship MSG="v1.0.33: good stuff"`
+
+Same as ship, but without checking the config still matches, linting, or running tests.
+
 `musical-patterns-cli lint`
 
 Uses tslint.
