@@ -2,7 +2,9 @@
 
 set -e
 
-rm -rf ../fake_npm_${SERVICE}
+SERVICES_FOLDER_FROM_ANY_SUBMODULE=../../services
+
+rm -rf ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
 
 if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${SERVICE}) ]] ; then
 	npm rm @musical-patterns/${SERVICE}
