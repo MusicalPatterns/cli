@@ -4,7 +4,7 @@ set -e
 
 SERVICES_FOLDER_FROM_ANY_SUBMODULE=../../services
 
-rm -rf ../fake_npm_${SERVICE}
+rm -rf ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
 
 pushd ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/${SERVICE}/ > /dev/null 2>&1
 	make build_local
