@@ -50,13 +50,13 @@ Used by the `use-latest-local` command.
 
 Confirm that your configuration files match the standards here in the CLI repo.
 
-`musical-patterns-cli commit MSG="v1.0.33: good stuff"`
+`musical-patterns-cli commit msg="v1.0.33: good stuff"`
 
 Generally meant to be run ad part of the ship command, but available if you're interested. 
 
 Commits recursively (applying message to all submodules all the way down).
 
-`musical-patterns-cli fast-ship MSG="v1.0.33: good stuff"`
+`musical-patterns-cli fast-ship msg="v1.0.33: good stuff"`
 
 Same as ship, but without checking the config still matches, linting, or running tests.
 
@@ -67,7 +67,7 @@ Uses tslint.
 `musical-patterns-cli publish`
 
 Patches and publishes to npm.
-It tries to be nice and not publish if your working tree is clean, but if you just accidentally cleaned it without publishing, you can provide `FORCE=true` and it will publish anyway.
+It tries to be nice and not publish if your working tree is clean, but if you just accidentally cleaned it without publishing, you can provide `force=true` and it will publish anyway.
 
 `musical-patterns-cli pull`
 
@@ -77,7 +77,7 @@ Pulls from Github, including all submodules recursively (also updates them).
 
 Pushes to Github, including all submodules.
 
-`musical-patterns-cli ship MSG="improves the tests"`
+`musical-patterns-cli ship msg="improves the tests"`
 
 The omni-command. 
 
@@ -85,19 +85,19 @@ The omni-command.
 - runs tests
 - runs the linter
 - patches the version
-- commits all changes (appending your MSG to the new version number as the message)
+- commits all changes (appending your `msg` to the new version number as the message)
 - pushes
 - publishes
 
-`musical-patterns-cli stash MSG="stashing this important thing"`
+`musical-patterns-cli stash msg="stashing this important thing"`
 
 Stashes recursively.
 
-`musical-patterns-cli stash-pop MSG="stashing this important thing"`
+`musical-patterns-cli stash-pop msg="stashing this important thing"`
 
 Pops matching stashes recursively.
 
-`musical-patterns-cli switch-back-to-remote SERVICE=performer`
+`musical-patterns-cli switch-back-to-remote service=performer`
 
 Undoes the `use-latest-local` command.
 
@@ -105,6 +105,6 @@ Undoes the `use-latest-local` command.
 
 Runs your tests.
 
-`musical-patterns-cli use-latest-local SERVICE=performer`
+`musical-patterns-cli use-latest-local service=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.

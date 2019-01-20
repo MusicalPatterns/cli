@@ -2,14 +2,14 @@
 
 set -e
 
-if [[ "${PATTERN}" == "" ]] ; then
+if [[ "${pattern}" == "" ]] ; then
 	FOLDER_FROM_ANY_SUBMODULE=../../services
-	REPO=${SERVICE}
-	PACKAGE=${SERVICE}
+	REPO=${service}
+	PACKAGE=${service}
 else
 	FOLDER_FROM_ANY_SUBMODULE=../../patterns
-	REPO=${PATTERN}
-	PACKAGE=pattern-$(sed 's/^[[:upper:]]/\L&/;s/[[:upper:]]/\L\-&/g' <<< ${PATTERN})
+	REPO=${pattern}
+	PACKAGE=pattern-$(sed 's/^[[:upper:]]/\L&/;s/[[:upper:]]/\L\-&/g' <<< ${pattern})
 fi
 
 rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
