@@ -7,3 +7,4 @@ while read SHARED_FILE ; do
 done < bin/non_cli/shared_files.txt
 
 cp share/gitignore ../../../.gitignore
+cp share/npmignore ../../../.npmignore
