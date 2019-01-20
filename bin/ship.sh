@@ -2,11 +2,13 @@
 
 set -e
 
-if [[ -n $(git status -s) || ${FORCE} == true ]] ; then
-	make match_config
-	make test
-	make lint
+. bin/non_cli/run_only_if_not_clean.sh
+
+ship() {
+	make match_config || return
+	make test || return
+	make lint || return
 	make fast_ship
-else
-	echo "Working tree clean. Nothing to ship."
-fi
+}
+
+run_only_if_not_clean ship

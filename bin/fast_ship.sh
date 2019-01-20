@@ -2,10 +2,12 @@
 
 set -e
 
-if [[ -n $(git status -s) || ${FORCE} == true ]] ; then
-	make publish
-	make commit
+. bin/non_cli/run_only_if_not_clean.sh
+
+fast_ship() {
+	make publish || return
+	make commit || return
 	make push
-else
-	echo "Working tree clean. Nothing to ship."
-fi
+}
+
+run_only_if_not_clean fast_ship

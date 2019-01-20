@@ -2,10 +2,12 @@
 
 set -e
 
-if [[ -n $(git status -s) || ${FORCE} == true ]] ; then
-	make build
-	npm version patch > /dev/null 2>&1
+. bin/non_cli/run_only_if_not_clean.sh
+
+publish() {
+	make build || return
+	npm version patch > /dev/null 2>&1 || return
 	npm publish --access public
-else
-	echo "Working tree clean. Nothing to publish."
-fi
+}
+
+run_only_if_not_clean publish
