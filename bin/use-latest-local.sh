@@ -15,7 +15,10 @@ fi
 rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 
 pushd ${FOLDER_FROM_ANY_SUBMODULE}/${REPO}/ > /dev/null 2>&1
-	make build-local
+	if [[ "${do-not-build}" != "true" ]] ; then
+		make build-local
+	fi
+
 	npm pack
 	mv *.tgz ..
 popd > /dev/null 2>&1

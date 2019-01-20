@@ -108,3 +108,5 @@ Runs your tests.
 `musical-patterns-cli use-latest-local service=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.
+If you provide `do-not-build=true`, will skip re-building the target.
+You can also pass it a `pattern` instead of a `service`.
