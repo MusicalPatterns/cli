@@ -15,7 +15,7 @@ fi
 rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 
 pushd ${FOLDER_FROM_ANY_SUBMODULE}/${REPO}/ > /dev/null 2>&1
-	if [[ "${do-not-build}" != "true" ]] ; then
+	if [[ "${built}" != "true" ]] ; then
 		make build-local
 	fi
 
