@@ -2,7 +2,7 @@
 
 set -e
 
-. bin/non_cli/run_only_if_not_clean.sh
+. ${CLI_DIR:=.}/bin/non_cli/run_only_if_not_clean.sh
 
 fast_ship() {
 	make publish || return
