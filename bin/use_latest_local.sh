@@ -2,25 +2,31 @@
 
 set -e
 
-SERVICES_FOLDER_FROM_ANY_SUBMODULE=../../services
+if [[ PATTERN='' ]] ; then
+	FOLDER_FROM_ANY_SUBMODULE=../../services
+	REPO=${SERVICE}
+else
+	FOLDER_FROM_ANY_SUBMODULE=../../patterns
+	REPO=${PATTERN}
+fi
 
-rm -rf ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
+rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 
-pushd ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/${SERVICE}/ > /dev/null 2>&1
+pushd ${FOLDER_FROM_ANY_SUBMODULE}/${REPO}/ > /dev/null 2>&1
 	make build_local
 	npm pack
 	mv *.tgz ..
 popd > /dev/null 2>&1
 
-pushd ${SERVICES_FOLDER_FROM_ANY_SUBMODULE} > /dev/null 2>&1
+pushd ${FOLDER_FROM_ANY_SUBMODULE} > /dev/null 2>&1
 	tar -xvzf *.tgz
-	mv package fake_npm_${SERVICE}
+	mv package fake_npm_${REPO}
 	rm *.tgz
 popd > /dev/null 2>&1
 
-if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${SERVICE}) ]] ; then
-	npm i -D ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
+if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${REPO}) ]] ; then
+	npm i -D ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi
-if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${SERVICE}) ]] ; then
-	npm i ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
+if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${REPO}) ]] ; then
+	npm i ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi

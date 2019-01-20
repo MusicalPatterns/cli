@@ -2,15 +2,21 @@
 
 set -e
 
-SERVICES_FOLDER_FROM_ANY_SUBMODULE=../../services
-
-rm -rf ${SERVICES_FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${SERVICE}
-
-if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${SERVICE}) ]] ; then
-	npm rm @musical-patterns/${SERVICE}
-	npm i -D @musical-patterns/${SERVICE}@latest
+if [[ PATTERN='' ]] ; then
+	FOLDER_FROM_ANY_SUBMODULE=../../services
+	REPO=${SERVICE}
+else
+	FOLDER_FROM_ANY_SUBMODULE=../../patterns
+	REPO=${PATTERN}
 fi
-if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${SERVICE}) ]] ; then
-	npm rm @musical-patterns/${SERVICE}
-	npm i @musical-patterns/${SERVICE}@latest
+
+rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
+
+if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${REPO}) ]] ; then
+	npm rm @musical-patterns/${REPO}
+	npm i -D @musical-patterns/${REPO}@latest
+fi
+if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${REPO}) ]] ; then
+	npm rm @musical-patterns/${REPO}
+	npm i @musical-patterns/${REPO}@latest
 fi
