@@ -8,19 +8,19 @@ Makefile:
 build:
 	@:
 
-build_local:
+build-local:
 	@:
 
 commit:
 	@bin/commit.sh
 
-fast_ship:
-	@bin/fast_ship.sh
+fast-ship:
+	@bin/fast-ship.sh
 
 lint:
 	@:
 
-match_config:
+match-config:
 	@:
 
 publish:
@@ -35,7 +35,7 @@ push:
 ship:
 	@bin/ship.sh
 
-switch_back_to_remote:
+switch-back-to-remote:
 	@:
 
 test:
