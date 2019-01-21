@@ -33,5 +33,5 @@ if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAG
 	npm i -D ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi
 if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm i ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
+	npm i -S ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi
