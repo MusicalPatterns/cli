@@ -29,9 +29,13 @@ pushd ${FOLDER_FROM_ANY_SUBMODULE} > /dev/null 2>&1
 	rm *.tgz
 popd > /dev/null 2>&1
 
+rm package-lock.json
+
 if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
+	npm un @musical-patterns/${PACKAGE}
 	npm i -D ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi
 if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm i -S ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
+	npm un @musical-patterns/${PACKAGE}
+	npm i -P ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
 fi
