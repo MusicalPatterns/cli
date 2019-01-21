@@ -12,13 +12,11 @@ else
 	PACKAGE=pattern-$(sed 's/^[[:upper:]]/\L&/;s/[[:upper:]]/\L\-&/g' <<< ${pattern})
 fi
 
-rm -rf ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}
+rm ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}.tgz
 
 if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm rm @musical-patterns/${REPO}
 	npm i -D @musical-patterns/${REPO}@latest
 fi
 if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm rm @musical-patterns/${REPO}
-	npm i @musical-patterns/${REPO}@latest
+	npm i -P @musical-patterns/${REPO}@latest
 fi
