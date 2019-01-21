@@ -5,8 +5,8 @@ set -e
 . ${CLI_DIR:=.}/bin/non_cli/run_only_if_not_clean.sh
 
 fast_ship() {
-	make publish || return
 	make commit || return
+	make publish || return
 	make push
 }
 
