@@ -2,7 +2,7 @@
 
 VERSION=$(cat package.json 2>/dev/null | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
 PACKAGE_NAME=$(node -e "try {var pack=require('./package.json'); console.log(pack.name); } catch(e) {}")
-PUBLISHED_VERSION=$(npm show ${PACKAGE_NAME} version 2>/dev/null)
+PUBLISHED_VERSION=$(npm show ${PACKAGE_NAME} version)
 
 set -e
 
