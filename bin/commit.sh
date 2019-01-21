@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
-
 VERSION=$(cat package.json 2>/dev/null | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
 PACKAGE_NAME=$(node -e "try {var pack=require('./package.json'); console.log(pack.name); } catch(e) {}")
-PUBLISHED_VERSION=$(npm show ${PACKAGE_NAME} version)
+PUBLISHED_VERSION=$(npm show ${PACKAGE_NAME} version > /dev/null 2>&1 || echo "")
+
+set -e
 
 if [[ "${VERSION}" == "${PUBLISHED_VERSION}" ]] ; then
 	VERSION_PREFIX=""
