@@ -26,7 +26,7 @@ var Rule = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
-        if (!sourceFile.fileName.includes('main/patterns/pattern-')) {
+        if (!sourceFile.fileName.includes('main/patterns/')) {
             return [];
         }
         if (sourceFile.fileName.includes('src/material/') && filenameIsNotAllowed(sourceFile.fileName, materialsFilenames)) {
