@@ -1,16 +1,3 @@
-tsconfig.common.json
-tsconfig.library.json
-tsconfig.json
-tsconfig.node.json
-tslint.json
-test/tslint.json
-test/mockDom.ts
-test/reporter.ts
-test/jasmine.js
-Makefile
-.gitattributes
-.travis.yml
-LICENSE
 .idea/codeStyles/codeStyleConfig.xml
 .idea/codeStyles/Project.xml
 .idea/inspectionProfiles/Project_Default.xml
