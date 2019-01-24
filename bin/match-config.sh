@@ -16,9 +16,12 @@ check_match() {
 }
 
 shopt -s globstar
-for SHARED_FILE in ./share/**/*
+for SHARED_FILE in node_modules/@musical-patterns/cli/share/**/*
 do
 	if [[ -f "${SHARED_FILE}" ]]; then
+		echo "highly doubt this will work"
+		echo ${SHARED_FILE:8}
+		echo ${SHARED_FILE}
 		check_match ${SHARED_FILE:8}
 	fi
 done
