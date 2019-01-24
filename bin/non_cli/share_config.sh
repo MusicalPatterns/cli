@@ -4,5 +4,5 @@
 
 share_files
 
-cp share/gitignore ../../../.gitignore
-cp share/npmignore ../../../.npmignore
+mv ../../../gitignore ../../../.gitignore
+mv ../../../npmignore ../../../.gitignore
