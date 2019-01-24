@@ -12,6 +12,6 @@
     ],
     "no-reaching-imports": false,
     "only-import-index-for-test-from-src": true,
-    "no-nonstandard-materials-files": false
+    "no-nonstandard-pattern-files": false
   }
 }
