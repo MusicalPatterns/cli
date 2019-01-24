@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 . bin/non_cli/share_file.sh
 
 share_files() {
