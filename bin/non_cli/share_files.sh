@@ -6,7 +6,9 @@ share_files() {
 	shopt -s globstar
 	for SHARED_FILE in ./share/**/*
 	do
-		share_file "$SHARED_FILE"
+	    if [[ -f "${SHARED_FILE}" ]]; then
+	    	share_file "$SHARED_FILE"
+		fi
 	done
 }
 export -f share_files
