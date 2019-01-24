@@ -15,6 +15,10 @@ check_match() {
 	set -e
 }
 
-while read SHARED_FILE ; do
-	check_match "$SHARED_FILE"
-done < node_modules/@musical-patterns/cli/bin/non_cli/shared_files.txt
+shopt -s globstar
+for SHARED_FILE in ./share/**/*
+do
+	if [[ -f "${SHARED_FILE}" ]]; then
+		check_match ${SHARED_FILE:8}
+	fi
+done
