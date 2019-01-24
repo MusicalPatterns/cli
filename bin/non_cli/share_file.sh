@@ -14,6 +14,6 @@ share_file() {
 	FILE="$1"
 	make_dir_for_file ${FILE}
 
-	cp ${FILE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
+	cp ${FILE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE:6}
 }
 export -f share_file
