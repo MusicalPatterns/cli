@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-. bin/non_cli/share_file.sh
+. bin/non_cli/share_files.sh
 
-while read SHARED_FILE ; do
-	share_file "$SHARED_FILE"
-done < bin/non_cli/shared_files.txt
+share_files
 
 cp share/gitignore ../../../.gitignore
 cp share/npmignore ../../../.npmignore
