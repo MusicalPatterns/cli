@@ -26,6 +26,9 @@ var Rule = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
+        if (!sourceFile.fileName.includes('main/patterns/pattern-')) {
+            return [];
+        }
         if (sourceFile.fileName.includes('src/material/') && filenameIsNotAllowed(sourceFile.fileName, materialsFilenames)) {
             return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
         }

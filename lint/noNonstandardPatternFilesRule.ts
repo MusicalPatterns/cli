@@ -23,6 +23,10 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static FAILURE_STRING = 'Keep the pattern files standardized. Only certain filenames are allowed in certain folders.'
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
+        if (!sourceFile.fileName.includes('main/patterns/pattern-')) {
+            return []
+        }
+
         if (sourceFile.fileName.includes('src/material/') && filenameIsNotAllowed(sourceFile.fileName, materialsFilenames)) {
             return [ new RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName) ]
         }
