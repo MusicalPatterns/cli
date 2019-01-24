@@ -5,4 +5,4 @@
 share_files
 
 mv ../../../gitignore ../../../.gitignore
-mv ../../../npmignore ../../../.gitignore
+mv ../../../npmignore ../../../.npmignore
