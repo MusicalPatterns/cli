@@ -14,5 +14,6 @@ share_config() {
 
 	ignore_files
 }
+export -f share_config
 
 run_only_if_not_self_installing share_config
