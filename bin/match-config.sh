@@ -16,6 +16,7 @@ check_match() {
 }
 
 shopt -s globstar
+shopt -s dotglob
 for SHARED_FILE in node_modules/@musical-patterns/cli/share/**/*
 do
 	if [[ -f "${SHARED_FILE}" && ${SHARED_FILE:41} != "gitignore" && ${SHARED_FILE:41} != "npmignore" ]]; then
