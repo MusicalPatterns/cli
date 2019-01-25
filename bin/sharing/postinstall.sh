@@ -7,7 +7,7 @@ set -e
 
 share_files_and_special_treatment_shared_files() {
 	mv bin/sharing/gitignore ../../../.gitignore
-	mv bin/sharing/npmignore ../../../.gitignore
+	mv bin/sharing/npmignore ../../../.npmignore
 
 	share_files
 }
