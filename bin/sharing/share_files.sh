@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ${CLI_DIR:=.}/bin/non_cli/share_file.sh
+. ${CLI_DIR:=.}/bin/sharing/share_file.sh
 
 share_files() {
 	shopt -s globstar

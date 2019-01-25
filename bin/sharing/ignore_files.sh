@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ${CLI_DIR:=.}/bin/non_cli/ignore_file.sh
+. ${CLI_DIR:=.}/bin/sharing/ignore_file.sh
 
 ignore_files() {
 	shopt -s globstar

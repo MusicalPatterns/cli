@@ -2,9 +2,9 @@
 
 set -e
 
-. bin/non_cli/run_only_if_not_self_installing.sh
-. bin/non_cli/share_files.sh
-. bin/non_cli/ignore_files.sh
+. bin/sharing/run_only_if_not_self_installing.sh
+. bin/sharing/share_files.sh
+. bin/sharing/ignore_files.sh
 
 share_config() {
 	share_files
