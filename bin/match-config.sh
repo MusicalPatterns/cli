@@ -8,7 +8,7 @@ check_match() {
 	set +e
 	cmp -s "${FILE}" "node_modules/@musical-patterns/cli/share/${FILE}"
 	if [[ $? != 0 ]] ; then
-		echo "mismatch against standardized configuration: ${FILE}"
+		echo "mismatch against standardized configuration: ${FILE}. Please re-run 'npm i @musical-patterns/cli'."
 		set -e
 		return 1
 	fi
