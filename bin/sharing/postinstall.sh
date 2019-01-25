@@ -4,16 +4,12 @@ set -e
 
 . bin/sharing/run_only_if_not_self_installing.sh
 . bin/sharing/share_files.sh
-. bin/sharing/ignore_files.sh
 
-share_config() {
+share_files_and_special_treatment_shared_files() {
+	mv bin/sharing/gitignore ../../../.gitignore
+	mv bin/sharing/npmignore ../../../.gitignore
+
 	share_files
-
-	mv ../../../gitignore ../../../.gitignore
-	mv ../../../npmignore ../../../.npmignore
-
-	ignore_files
 }
-export -f share_config
 
-run_only_if_not_self_installing share_config
+run_only_if_not_self_installing share_files_and_special_treatment_shared_files

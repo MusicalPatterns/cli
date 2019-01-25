@@ -23,7 +23,7 @@ check_matches() {
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 	for SHARED_FILE in ${SHARED_DIR}**/*
 	do
-		if [[ -f "${SHARED_FILE}" && ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH} != "gitignore" && ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH} != "npmignore" ]]; then
+		if [[ -f "${SHARED_FILE}" ]]; then
 			check_match ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH} ${SERVICE}
 		fi
 	done
