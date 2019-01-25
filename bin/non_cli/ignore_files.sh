@@ -4,6 +4,7 @@
 
 ignore_files() {
 	shopt -s globstar
+	shopt -s dotglob
 	for SHARED_FILE in ./share/**/*
 	do
 	    if [[ -f "${SHARED_FILE}" ]]; then
