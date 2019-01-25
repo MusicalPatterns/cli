@@ -3,5 +3,16 @@
 set -e
 
 . bin/non_cli/run_only_if_not_self_installing.sh
+. bin/non_cli/share_files.sh
+. bin/non_cli/ignore_files.sh
 
-run_only_if_not_self_installing "bash ./bin/non_cli/share_config.sh"
+share_config() {
+	share_files
+
+	mv ../../../gitignore ../../../.gitignore
+	mv ../../../npmignore ../../../.npmignore
+
+	ignore_files
+}
+
+run_only_if_not_self_installing share_config
