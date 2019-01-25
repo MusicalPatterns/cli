@@ -11,9 +11,13 @@ make_dir_for_file() {
 }
 
 share_file() {
+	echo "!!!"
 	FILE="$1"
+	echo "@@@"
 	make_dir_for_file ${FILE}
+	echo "###"
 
 	cp "share/${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
+	echo "%%%"
 }
 export -f share_file
