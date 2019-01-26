@@ -41,7 +41,7 @@ The Makefile aliases the CLI commands as `make` commands.
 
 Defaults to compile typescript using the "library" style configuration, but you can override this in your `Makefile.*` file.
 
-`musical-patterns-cli build-local`
+`musical-patterns-cli build-dev`
 
 Same as above, but you can override separately (e.g. to set `mode: development` for `webpack`).
 Used by the `use-latest-local` command.
