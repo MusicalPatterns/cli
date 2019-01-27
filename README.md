@@ -33,6 +33,7 @@ These configuration files are for building, testing, linting, publishing, storin
 - tsconfig.node.json
 - tslint.json
 - webpack.browser.js
+- webpack.deploy.js
 - webpack.dev.js
 - webpack.prod.js
 - webpack.library.js
