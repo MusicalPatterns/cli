@@ -7,7 +7,6 @@ module.exports = {
     ],
     helpers: [
         'test/mockDom.ts',
-        'test/setup.js',
         'test/setup.ts',
         'test/reporter.ts',
     ],
