@@ -5,7 +5,7 @@ ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 ignore_file() {
 	FILE="$1"
 
-	if [[ ${FILE} == "LICENSE" && ${FILE} == ".travis.yml" ]] ; then
+	if [[ ${FILE} == "LICENSE" || ${FILE} == ".travis.yml" ]] ; then
 		return 0
 	fi
 
