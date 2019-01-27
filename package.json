@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.353",
+  "version": "1.0.354",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -16,6 +16,8 @@
     "@types/jasmine": "^3.3.8",
     "@types/node": "^10.12.18",
     "browser-env": "^3.2.5",
+    "favicons-webpack-plugin": "0.0.9",
+    "html-webpack-plugin": "^3.2.0",
     "jasmine": "^3.3.1",
     "jasmine-spec-reporter": "^4.2.1",
     "ts-node": "^7.0.1",
