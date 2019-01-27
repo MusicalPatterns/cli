@@ -32,6 +32,13 @@ These configuration files are for building, testing, linting, publishing, storin
 - tsconfig.json
 - tsconfig.node.json
 - tslint.json
+- webpack.browser.js
+- webpack.dev.js
+- webpack.prod.js
+- webpack.library.js
+- webpack.qa.js
+- webpack.local.js
+- webpack.publish.js
 
 The Makefile aliases the CLI commands as `make` commands.
 
