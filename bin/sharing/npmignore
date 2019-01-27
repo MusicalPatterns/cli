@@ -2,4 +2,3 @@
 !bin/**/*
 !dist/**/*
 !share/**/*
-!assets/favicon.png
