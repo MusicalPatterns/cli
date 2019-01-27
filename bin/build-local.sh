@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-${CLI_DIR}/bin/build.sh "$1"
+${CLI_DIR}/bin/build.sh "webpack --config webpack.local.js"
