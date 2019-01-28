@@ -36,7 +36,7 @@ share_files() {
 	shopt -s dotglob
 	SHARED_DIR=node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
-	for SHARED_FILE in ${SHARED_DIR}/**/*
+	for SHARED_FILE in ${SHARED_DIR}**/*
 	do
 		echo "--- trying to share file"${SHARED_FILE}
 	    if [[ -f "${SHARED_FILE}" ]]; then

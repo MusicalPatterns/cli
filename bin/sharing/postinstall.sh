@@ -12,7 +12,7 @@ share_files_and_special_treatment_shared_files() {
 
 	SERVICES=("cli" "utilities" "performer" "compiler" "pattern" "snapshot" "playroom" "lab")
 	for i in "${!SERVICES[@]}" ; do
-		echo "- SHARING FILES FOR "${i}
+		echo "- SHARING FILES FOR ""${SERVICES[i]}"
 
 		share_files "${SERVICES[i]}"
 	done
