@@ -30,7 +30,6 @@ These configuration files are for building, testing, linting, publishing, storin
 - test/reporter.ts
 - test/jasmine.js
 - tsconfig.common.json
-- tsconfig.library.json
 - tsconfig.json
 - tsconfig.node.json
 - tslint.json
