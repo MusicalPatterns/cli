@@ -6,6 +6,7 @@ set -e
 
 ship() {
 	make match-config || return
+	make update || return
 	make test || return
 	make lint || return
 	make fast-ship
