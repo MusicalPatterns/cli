@@ -97,6 +97,10 @@ The omni-command.
 - pushes
 - publishes
 
+`musical-patterns-cli start`
+
+Starts up a QA version of the service or pattern. Not all support this.
+
 `musical-patterns-cli stash msg="stashing this important thing"`
 
 Stashes recursively.
