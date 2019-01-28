@@ -2,9 +2,11 @@
 
 # Musical Patterns - CLI
 
-The Musical Patterns CLI provides all the commands and common configuration necessary to develop on a Musical Patterns repo.
+The Musical Patterns CLI provides all the common commands, configuration, and dependencies for developing a Musical Patterns repo.
 
-When you install it as an `npm` package, `@musical-patterns/cli` copies its configuration files up into your repo's.
+It works for both service and pattern repos.
+
+When you install it as an `npm` package, `@musical-patterns/cli` copies its configuration files up into the installing repo.
 
 These configuration files are for building, testing, linting, publishing, storing, and sharing the code:
 
@@ -33,6 +35,7 @@ These configuration files are for building, testing, linting, publishing, storin
 - tsconfig.node.json
 - tslint.json
 - webpack.browser.js
+- webpack.common.js
 - webpack.deploy.js
 - webpack.dev.js
 - webpack.prod.js
