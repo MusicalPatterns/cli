@@ -9,6 +9,7 @@
     "max-file-line-count": [
       false
     ],
+    "no-big-function": false,
     "no-identical-functions": false,
     "no-magic-numbers": false,
     "no-nonstandard-pattern-files": false,
