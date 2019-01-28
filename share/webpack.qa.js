@@ -1,4 +1,4 @@
-const common = require('./webpack.common')
+const common = require('./webpack.self' || './webpack.common')
 const dev = require('./webpack.dev')
 const browser = require('./webpack.browser')
 const merge = require('webpack-merge')
