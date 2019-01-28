@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.360",
+  "version": "1.0.361",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -24,6 +24,7 @@
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "tslint-eslint-rules": "^5.4.0",
+    "tslint-sonarts": "^1.9.0",
     "typescript": "^3.2.4",
     "webpack-merge": "^4.2.1"
   }
