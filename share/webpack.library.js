@@ -6,8 +6,12 @@ module.exports = {
         libraryTarget: 'umd',
     },
     externals: [
+        '@musical-patterns/cli',
         '@musical-patterns/compiler',
         '@musical-patterns/pattern',
+        '@musical-patterns/performer',
+        '@musical-patterns/playroom',
+        '@musical-patterns/snapshot',
         '@musical-patterns/utilities',
     ],
 }
