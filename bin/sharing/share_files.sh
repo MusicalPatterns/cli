@@ -38,7 +38,9 @@ share_files() {
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 	for SHARED_FILE in ${SHARED_DIR}/**/*
 	do
+		echo "--- trying to share file"${SHARED_FILE}
 	    if [[ -f "${SHARED_FILE}" ]]; then
+	    	echo "yes"${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH}
 			share_file ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH}
 		fi
 	done
