@@ -3,12 +3,12 @@
 set -e
 
 . bin/sharing/share_files.sh
+. bin/non_cli/services.sh
 
 share_files_and_special_treatment_shared_files() {
 	mv bin/sharing/gitignore ../../../.gitignore
 	mv bin/sharing/npmignore ../../../.npmignore
 
-	SERVICES=("cli" "utilities" "performer" "compiler" "pattern" "snapshot" "playroom" "lab")
 	for i in "${!SERVICES[@]}" ; do
 		share_files "${SERVICES[i]}"
 	done
