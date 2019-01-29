@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-npm-check-updates -u
+ncu -u
 npm i
