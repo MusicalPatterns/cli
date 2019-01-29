@@ -1,21 +1,11 @@
 #!/usr/bin/env bash
 
-#ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
-
 ignore_file() {
 	FILE="$1"
 
 	if [[ ${FILE} == "LICENSE" || ${FILE} == ".travis.yml" ]] ; then
 		return 0
 	fi
-
-	echo "catting some gitignores"
-	cat ./.gitignore || true
-	cat ../.gitignore || true
-	cat ../../.gitignore || true
-	cat ../../../.gitignore || true
-	cat ../../../../.gitignore || true
-	cat ../../../../../.gitignore || true
 
 	grep -q -x -F "${FILE}" ../../../.gitignore || echo "${FILE}" >> ../../../.gitignore
 }
@@ -39,15 +29,6 @@ share_file() {
 
 	make_dir_for_file ${FILENAME}
 	cp ${FILE_TO_SHARE} ../../../${FILENAME}
-
-	echo "is that all this is about"../../../
-	pushd ../../../
-		echo "the directory we just copied to"
-		echo $PWD
-	popd
-#	echo "contents of folder i just copied to"
-#	ls ../../../
-	echo "and our present working directory" $PWD
 
 	ignore_file ${FILENAME}
 }

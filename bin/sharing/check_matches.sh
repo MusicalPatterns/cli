@@ -23,7 +23,6 @@ check_matches() {
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 	for SHARED_FILE in ${SHARED_DIR}**/*
 	do
-		echo "--- trying to match file"${SHARED_FILE}
 		if [[ -f "${SHARED_FILE}" ]]; then
 			check_match ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH} ${SERVICE}
 		fi
