@@ -20,9 +20,6 @@ fast-ship:
 lint:
 	@:
 
-match-config:
-	@:
-
 publish:
 	@bin/publish.sh
 

@@ -5,7 +5,7 @@ set -e
 . ${CLI_DIR:=.}/bin/non_cli/run_only_if_not_clean.sh
 
 ship() {
-	make match-config || return
+	bash ${CLI_DIR:=.}/bin/sharing/check_config.sh
 	make update || return
 	make test || return
 	make lint || return
