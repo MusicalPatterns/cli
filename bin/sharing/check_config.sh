@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. bin/non_cli/services.sh
+. ${CLI_DIR:=./}bin/non_cli/services.sh
 
 check_config_file() {
 	FILE="$1"
