@@ -23,7 +23,8 @@ make_dir_for_file() {
 }
 
 share_file() {
-	FILE="$1"
+	LENGTH_TO_STRIP=$1
+	FILE=${2:LENGTH_TO_STRIP}
 	make_dir_for_file ${FILE}
 	cp "share/${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
 	ignore_file ${FILE}
@@ -32,17 +33,9 @@ share_file() {
 share_files() {
 	SERVICE=${1:=cli}
 
-	shopt -s globstar
-	shopt -s dotglob
 	SHARED_DIR=node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
-	for SHARED_FILE in ${SHARED_DIR}**/*
-	do
-		echo "--- trying to share file"${SHARED_FILE}
-	    if [[ -f "${SHARED_FILE}" ]]; then
-	    	echo "yes"${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH}
-			share_file ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH}
-		fi
-	done
+
+	find ${SHARED_DIR} -type f -exec bash -c 'share_file "$0" "$1"'  ${SHARED_DIR_PATH_CHAR_LENGTH} {} \;
 }
 export -f share_files
