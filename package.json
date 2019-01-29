@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@types/jasmine": "^3.3.8",
-    "@types/node": "^10.12.18",
+    "@types/node": "^10.12.19",
     "awesome-typescript-loader": "^5.2.1",
     "browser-env": "^3.2.5",
     "favicons-webpack-plugin": "0.0.9",
