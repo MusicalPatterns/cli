@@ -9,7 +9,7 @@ ignore_file() {
 		return 0
 	fi
 
-	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore
+	grep -q -x -F "${FILE}" .gitignore || echo "${FILE}" >> .gitignore
 }
 export -f ignore_file
 
