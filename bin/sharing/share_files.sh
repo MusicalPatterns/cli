@@ -9,7 +9,15 @@ ignore_file() {
 		return 0
 	fi
 
-	grep -q -x -F "${FILE}" .gitignore || echo "${FILE}" >> .gitignore
+	echo "catting some gitignores"
+	cat ./.gitignore
+	cat ../.gitignore
+	cat ../../.gitignore
+	cat ../../../.gitignore
+	cat ../../../../.gitignore
+	cat ../../../../../.gitignore
+
+	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore
 }
 export -f ignore_file
 
@@ -31,6 +39,11 @@ share_file() {
 
 	make_dir_for_file ${FILENAME}
 	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILENAME}
+
+	echo "contents of folder i just copied to"
+	ls ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
+	echo "and our present working directory" $PWD
+
 	ignore_file ${FILENAME}
 }
 export -f share_file
