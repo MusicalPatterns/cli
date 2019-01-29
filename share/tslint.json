@@ -65,6 +65,7 @@
     "restrict-plus-operands": false,
     "semicolon": false,
     "strict-boolean-expressions": false,
-    "type-literal-delimiter": false
+    "type-literal-delimiter": false,
+    "use-primitive-type": false
   }
 }
