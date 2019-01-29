@@ -25,6 +25,8 @@ make_dir_for_file() {
 share_file() {
 	LENGTH_TO_STRIP=$1
 	FILE=${2:LENGTH_TO_STRIP}
+	echo "file to share"${FILE}
+	echo "what it would have ben"${2}
 	make_dir_for_file ${FILE}
 	cp "share/${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
 	ignore_file ${FILE}
@@ -36,6 +38,6 @@ share_files() {
 	SHARED_DIR=node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 
-	find ${SHARED_DIR} -type f -exec bash -c 'share_file "$0" "$1"'  ${SHARED_DIR_PATH_CHAR_LENGTH} {} \;
+	find ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${SHARED_DIR} -type f -exec bash -c 'share_file "$0" "$1"' ${SHARED_DIR_PATH_CHAR_LENGTH} {} \;
 }
 export -f share_files
