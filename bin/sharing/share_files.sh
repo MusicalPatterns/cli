@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
+#ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES="../../../"
 
 ignore_file() {
 	FILE="$1"
@@ -10,14 +10,14 @@ ignore_file() {
 	fi
 
 	echo "catting some gitignores"
-	cat ./.gitignore
-	cat ../.gitignore
-	cat ../../.gitignore
-	cat ../../../.gitignore
-	cat ../../../../.gitignore
-	cat ../../../../../.gitignore
+	cat ./.gitignore || true
+	cat ../.gitignore || true
+	cat ../../.gitignore || true
+	cat ../../../.gitignore || true
+	cat ../../../../.gitignore || true
+	cat ../../../../../.gitignore || true
 
-	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore
+	grep -q -x -F "${FILE}" ../../../.gitignore || echo "${FILE}" >> ../../../.gitignore
 }
 export -f ignore_file
 
@@ -27,7 +27,7 @@ make_dir_for_file() {
 	DIR=$(grep -Po '.*(?=\/)' <<< "${FILE}")
 	set -e
 	if [[ ${DIR} != "" ]] ; then
-		mkdir -p ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${DIR}
+		mkdir -p ../../../${DIR}
 	fi
 }
 export -f make_dir_for_file
@@ -38,15 +38,15 @@ share_file() {
 	FILENAME=${2:LENGTH_TO_STRIP}
 
 	make_dir_for_file ${FILENAME}
-	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILENAME}
+	cp ${FILE_TO_SHARE} ../../../${FILENAME}
 
-	echo "is that all this is about"${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
-	pushd ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
+	echo "is that all this is about"../../../
+	pushd ../../../
 		echo "the directory we just copied to"
 		echo $PWD
 	popd
 #	echo "contents of folder i just copied to"
-#	ls ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
+#	ls ../../../
 	echo "and our present working directory" $PWD
 
 	ignore_file ${FILENAME}
@@ -56,7 +56,7 @@ export -f share_file
 share_files() {
 	SERVICE=${1:=cli}
 
-	SHARED_DIR=${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}node_modules/@musical-patterns/${SERVICE}/share/
+	SHARED_DIR=../../../node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 
 	if [[ -d ${SHARED_DIR} ]] ; then
