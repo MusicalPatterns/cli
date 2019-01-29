@@ -11,6 +11,7 @@ ignore_file() {
 
 	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}.gitignore
 }
+export -f ignore_file
 
 make_dir_for_file() {
 	FILE="$1"
@@ -21,15 +22,16 @@ make_dir_for_file() {
 		mkdir -p ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${DIR}
 	fi
 }
+export -f make_dir_for_file
 
 share_file() {
 	LENGTH_TO_STRIP=$1
-	FILE=${2:LENGTH_TO_STRIP}
-	echo "file to share"${FILE}
-	echo "what it would have ben"${2}
-	make_dir_for_file ${FILE}
-	cp "share/${FILE}" ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILE}
-	ignore_file ${FILE}
+	FILE_TO_SHARE=$2
+	FILENAME=${2:LENGTH_TO_STRIP}
+
+	make_dir_for_file ${FILENAME}
+	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILENAME}
+	ignore_file ${FILENAME}
 }
 export -f share_file
 
