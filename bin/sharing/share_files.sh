@@ -40,6 +40,7 @@ share_file() {
 	make_dir_for_file ${FILENAME}
 	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}${FILENAME}
 
+	echo "is that all this is about"${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
 	pushd ${ESCAPE_CLI_DIRECTORY_IN_PARENTS_NODE_MODULES}
 		echo "the directory we just copied to"
 		echo $PWD
