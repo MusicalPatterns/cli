@@ -43,6 +43,7 @@
     ],
     "no-import-paths-without-names": true,
     "no-inferrable-types": false,
+    "no-misleading-array-reverse": false,
     "no-namespace": false,
     "no-nonstandard-pattern-files": true,
     "no-reaching-imports": true,
