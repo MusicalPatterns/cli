@@ -53,14 +53,14 @@ if (existsSync('src/start.ts')) {
                 const t0: number = performance.now()
                 await startServerIfNecessary()
                 const t1: number = performance.now()
-                console.log(`Starting the server took ${Math.round(t1 - t0)} milliseconds.`)
+                console.log(`Starting the server took ${Math.round(t1 - t0) / 1000} seconds.`)
 
                 const t2: number = performance.now()
                 browser = await launch({ headless: !process.env.headful, timeout: PUPPETEER_TIMEOUT })
                 page = await browser.newPage()
                 await page.goto(`http://${HOST}:${port}`, { timeout: PUPPETEER_TIMEOUT })
                 const t3: number = performance.now()
-                console.log(`Starting puppeteer took ${Math.round(t3 - t2)} milliseconds.`)
+                console.log(`Starting puppeteer took ${Math.round(t3 - t2) / 1000} seconds.`)
             }
             catch (e) {
                 console.log('Error in setup: ', e)
