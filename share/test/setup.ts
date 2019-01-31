@@ -3,6 +3,7 @@
 import { ChildProcess, exec } from 'child_process'
 import { existsSync } from 'fs'
 import { createServer, Server, Socket } from 'net'
+// tslint:disable-next-line:no-implicit-dependencies
 import { Browser, launch, Page } from 'puppeteer'
 // @ts-ignore
 import { port } from '../webpack.port'
