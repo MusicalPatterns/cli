@@ -113,7 +113,7 @@ Undoes the `use-latest-local` command.
 
 `musical-patterns-cli test`
 
-Runs your tests.
+Runs your tests. Use `headful=true` for integration suites if you want to see what's going on.
 
 `musical-patterns-cli use-latest-local service=performer`
 
