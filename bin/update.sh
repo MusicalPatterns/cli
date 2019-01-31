@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 
-ncu -u -a -e 2
-if [[ $? == 1 ]] ; then
-	npm i
-	npm upgrade
-fi
+echo "Please run 'npm update' instead. I cannot do it for you, as I would try to delete myself as part of updating myself."
