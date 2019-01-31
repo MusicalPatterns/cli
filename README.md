@@ -97,7 +97,8 @@ The omni-command.
 
 `musical-patterns-cli start`
 
-Starts up a QA version of the service or pattern. Not all support this.
+Starts up a QA version of the service or pattern, if it exists.
+You can pass `open=false` if you don't want it to automatically open a tab in your browser.
 
 `musical-patterns-cli stash msg="stashing this important thing"`
 
