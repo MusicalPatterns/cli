@@ -11,6 +11,7 @@
     ],
     "no-big-function": false,
     "no-identical-functions": false,
+    "no-implicit-dependencies": false,
     "no-magic-numbers": false,
     "no-nonstandard-pattern-files": false,
     "no-reaching-imports": false,
