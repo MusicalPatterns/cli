@@ -1,3 +1,5 @@
+// tslint:disable:no-console
+
 import { ChildProcess, exec } from 'child_process'
 import { existsSync } from 'fs'
 import { createServer, Server, Socket } from 'net'
