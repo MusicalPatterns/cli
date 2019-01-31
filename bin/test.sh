@@ -7,8 +7,8 @@ JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
 test -f "$JASMINE_PATH"
 JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${CLI_DIR}${JASMINE_PATH}")
 
-echo "Building the source code took:"
-time tsc -p ${TSCONFIG}
+TIMEFORMAT=%R
+echo "Building the source code took: "$(time tsc -p ${TSCONFIG})" seconds."
 if [[ $? == 0 ]] ; then
 	NODE_ENV=test ts-node -P ${TSCONFIG} ${JASMINE_BINARY}
 else
