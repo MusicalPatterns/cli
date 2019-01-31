@@ -6,7 +6,6 @@ set -e
 
 ship() {
 	bash ${CLI_DIR:=./}bin/sharing/check_config.sh
-	make update || return
 	make test || return
 	make lint || return
 	make fast-ship
