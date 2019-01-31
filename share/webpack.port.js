@@ -1,5 +1,7 @@
 const path = require('path')
 
+const repo = __dirname.split(path.sep).pop()
+
 module.exports = {
-    port: path.basename(path.dirname(__dirname)) === 'performer' ? 8081 : 8080,
+    port: repo === 'performer' ? 8081 : 8080,
 }
