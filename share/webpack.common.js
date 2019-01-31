@@ -1,4 +1,4 @@
-const { DefinePlugin } = 'webpack'
+const { DefinePlugin } = require('webpack')
 
 module.exports = {
     module: {
