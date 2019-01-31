@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.400",
+  "version": "1.0.401",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -22,7 +22,6 @@
     "jasmine": "^3.3.1",
     "jasmine-spec-reporter": "^4.2.1",
     "npm-check-updates": "^2.15.0",
-    "ps-tree": "^1.2.0",
     "puppeteer": "^1.11.0",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",

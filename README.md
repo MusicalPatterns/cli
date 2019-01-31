@@ -25,10 +25,11 @@ These configuration files are for building, testing, linting, publishing, storin
 - .travis.yml
 - LICENSE
 - Makefile
-- test/tslint.json
+- test/jasmine.js
 - test/mockDom.ts
 - test/reporter.ts
-- test/jasmine.js
+- test/setup.ts
+- test/tslint.json
 - tsconfig.common.json
 - tsconfig.json
 - tsconfig.node.json
