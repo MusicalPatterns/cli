@@ -8,7 +8,8 @@ test -f "$JASMINE_PATH"
 JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${CLI_DIR}${JASMINE_PATH}")
 
 TIMEFORMAT=%R
-echo "Building the source code took: "$(time tsc -p ${TSCONFIG})" seconds."
+TIME_TO_BUILD_SRC=$( { time tsc -p ${TSCONFIG} > /dev/null 2>&1; } 2>&1 )
+echo "Building the source code took "${TIME_TO_BUILD_SRC}" seconds."
 if [[ $? == 0 ]] ; then
 	NODE_ENV=test ts-node -P ${TSCONFIG} ${JASMINE_BINARY}
 else
