@@ -1,9 +1,9 @@
 // tslint:disable:no-console
 
+import { logMessageToConsole } from '@musical-patterns/utilities'
 import { ChildProcess, exec } from 'child_process'
 import { existsSync } from 'fs'
 import { createServer, Server, Socket } from 'net'
-// tslint:disable-next-line:no-implicit-dependencies
 import { Browser, launch, Page } from 'puppeteer'
 // @ts-ignore
 import { port } from '../webpack.port'
@@ -56,17 +56,17 @@ if (existsSync('src/start.ts')) {
                 const t0: number = performance.now()
                 await startServerIfNecessary()
                 const t1: number = performance.now()
-                console.log(`Starting the server took ${Math.round(t1 - t0) / 1000} seconds.`)
+                logMessageToConsole(`Starting the server took ${Math.round(t1 - t0) / 1000} seconds.`)
 
                 const t2: number = performance.now()
                 browser = await launch({ headless: !process.env.headful, timeout: PUPPETEER_TIMEOUT })
                 page = await browser.newPage()
                 await page.goto(`http://${HOST}:${port}`, { timeout: PUPPETEER_TIMEOUT })
                 const t3: number = performance.now()
-                console.log(`Starting puppeteer took ${Math.round(t3 - t2) / 1000} seconds.`)
+                logMessageToConsole(`Starting puppeteer took ${Math.round(t3 - t2) / 1000} seconds.`)
             }
             catch (e) {
-                console.log('Error in setup: ', e)
+                logMessageToConsole('Error in setup: ', e)
             }
 
             done()
@@ -80,7 +80,7 @@ if (existsSync('src/start.ts')) {
                 await browser.close()
             }
             catch (e) {
-                console.log('Error in setdown: ', e)
+                logMessageToConsole('Error in setdown: ', e)
             }
 
             done()
