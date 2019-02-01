@@ -49,7 +49,7 @@ const startServerIfNecessary: () => Promise<void> =
         })
     }
 
-if (existsSync('src/start.ts')) {
+if (existsSync('test/integration')) {
     beforeAll(
         async (done: DoneFn) => {
             try {
