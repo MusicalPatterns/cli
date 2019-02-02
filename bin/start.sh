@@ -6,4 +6,4 @@ else
 	START_PART=""
 fi
 
-NODE_ENV=development webpack-dev-server --config webpack.qa.js --color ${START_PART}
+webpack-dev-server --config webpack.qa.js --color ${START_PART}
