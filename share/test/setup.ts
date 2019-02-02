@@ -1,12 +1,12 @@
-// tslint:disable:no-console
-
 let logMessageToConsole: (...message: string[]) => void
 try {
-const { logMessageToConsole: logMessageToConsoleFromUtilities } = require('@musical-patterns/utilities')
+    // tslint:disable-next-line:no-require-imports no-var-requires
+    const { logMessageToConsole: logMessageToConsoleFromUtilities } = require('@musical-patterns/utilities')
     logMessageToConsole = logMessageToConsoleFromUtilities
 }
 catch (e) {
-    logMessageToConsole = () => {}
+    // tslint:disable-next-line:no-empty
+    logMessageToConsole = (): void => {}
 }
 
 import { ChildProcess, exec } from 'child_process'
