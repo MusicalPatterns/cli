@@ -1,6 +1,14 @@
 // tslint:disable:no-console
 
-import { logMessageToConsole } from '@musical-patterns/utilities'
+let logMessageToConsole: (...message: string[]) => void
+try {
+const { logMessageToConsole: logMessageToConsoleFromUtilities } = require('@musical-patterns/utilities')
+    logMessageToConsole = logMessageToConsoleFromUtilities
+}
+catch (e) {
+    logMessageToConsole = () => {}
+}
+
 import { ChildProcess, exec } from 'child_process'
 import { existsSync } from 'fs'
 import { createServer, Server, Socket } from 'net'
