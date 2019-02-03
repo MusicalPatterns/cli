@@ -86,6 +86,7 @@ var metadataFilenames = sharedFilenames.concat([
 ]);
 var specFilenames = sharedFilenames.concat([
     'attributes',
+    'constraints',
     'data',
     'descriptions',
     'initial',

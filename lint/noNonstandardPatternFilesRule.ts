@@ -78,6 +78,7 @@ const metadataFilenames: string[] = sharedFilenames.concat([
 
 const specFilenames: string[] = sharedFilenames.concat([
     'attributes',
+    'constraints',
     'data',
     'descriptions',
     'initial',
