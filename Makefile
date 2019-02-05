@@ -29,6 +29,9 @@ pull:
 push:
 	@bin/push.sh
 
+run:
+	@:
+
 ship:
 	@bin/ship.sh
 
