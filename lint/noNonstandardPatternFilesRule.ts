@@ -5,7 +5,7 @@ import { RuleFailure } from 'tslint'
 import * as ts from 'typescript'
 
 export class Rule extends Lint.Rules.AbstractRule {
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: 'no-nonstandard-pattern-files',
         description: Lint.Utils.dedent`

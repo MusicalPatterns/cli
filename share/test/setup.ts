@@ -1,11 +1,11 @@
 let logMessageToConsole: (...message: string[]) => void
 try {
-    // tslint:disable-next-line:no-require-imports no-var-requires
+    // tslint:disable-next-line no-require-imports no-var-requires
     const { logMessageToConsole: logMessageToConsoleFromUtilities } = require('@musical-patterns/utilities')
     logMessageToConsole = logMessageToConsoleFromUtilities
 }
 catch (e) {
-    // tslint:disable-next-line:no-empty
+    // tslint:disable-next-line no-empty
     logMessageToConsole = (): void => {}
 }
 

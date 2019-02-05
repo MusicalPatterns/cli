@@ -43,7 +43,7 @@ var Rule = /** @class */ (function (_super) {
     Rule.prototype.apply = function (sourceFile) {
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments)
     }
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-reaching-imports',
         description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            Disallows importing any submodule.' ], [ '\n            Disallows importing any submodule.' ]))),

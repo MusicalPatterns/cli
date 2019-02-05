@@ -5,7 +5,7 @@ import { findImports, ImportKind } from 'tsutils'
 import * as ts from 'typescript'
 
 export class Rule extends Lint.Rules.AbstractRule {
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: 'no-import-paths-without-names',
         description: Lint.Utils.dedent`

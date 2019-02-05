@@ -44,7 +44,7 @@ var Rule = /** @class */ (function (_super) {
     Rule.prototype.apply = function (sourceFile) {
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments)
     }
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'only-import-index-for-test-from-src',
         description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            When importing from \'src\', only lets you import \'src/indexForTest\'.' ], [ '\n            When importing from \'src\', only lets you import \'src/indexForTest\'.' ]))),

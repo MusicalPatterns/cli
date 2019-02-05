@@ -4,7 +4,7 @@ import * as Lint from 'tslint'
 import * as ts from 'typescript'
 
 export class Rule extends Lint.Rules.AbstractRule {
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: 'no-type-definitions-outside-types-modules',
         description: Lint.Utils.dedent`

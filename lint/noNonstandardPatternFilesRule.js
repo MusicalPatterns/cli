@@ -40,7 +40,7 @@ var Rule = /** @class */ (function (_super) {
         }
         return [];
     };
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-nonstandard-pattern-files',
         description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n            Disallows files inside a pattern's src folder which do not match a set of standard file names."], ["\n            Disallows files inside a pattern's src folder which do not match a set of standard file names."]))),

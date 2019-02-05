@@ -44,7 +44,7 @@ var Rule = /** @class */ (function (_super) {
     Rule.prototype.apply = function (sourceFile) {
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments)
     }
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-import-paths-without-names',
         description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.' ], [ '\n            Disallows importing from paths like \'../\', \'../../\', and \'./\'.' ]))),

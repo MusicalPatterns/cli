@@ -47,7 +47,7 @@ var Rule = /** @class */ (function (_super) {
         }
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments)
     }
-    /* tslint:disable:object-literal-sort-keys */
+    /* tslint:disable object-literal-sort-keys */
     Rule.metadata = {
         ruleName: 'no-type-definitions-outside-types-modules',
         description: Lint.Utils.dedent(templateObject_1 || (templateObject_1 = __makeTemplateObject([ '\n            Disallows defining types outside of dedicated modules named \'types.ts\'.' ], [ '\n            Disallows defining types outside of dedicated modules named \'types.ts\'.' ]))),
