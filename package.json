@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.429",
+  "version": "1.0.430",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -22,14 +22,14 @@
     "html-webpack-plugin": "^3.2.0",
     "jasmine": "^3.3.1",
     "jasmine-spec-reporter": "^4.2.1",
-    "puppeteer": "^1.12.1",
+    "puppeteer": "^1.12.2",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-sonarts": "^1.9.0",
-    "typescript": "^3.2.4",
-    "webpack": "^4.29.1",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
