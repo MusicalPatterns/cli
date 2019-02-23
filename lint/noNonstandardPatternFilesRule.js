@@ -26,16 +26,10 @@ var Rule = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
-        if (!sourceFile.fileName.includes('main/patterns/')) {
+        if (!sourceFile.fileName.includes('main/patterns/') || !sourceFile.fileName.includes('src/')) {
             return [];
         }
-        if (sourceFile.fileName.includes('src/material/') && filenameIsNotAllowed(sourceFile.fileName, materialsFilenames)) {
-            return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
-        }
-        if (sourceFile.fileName.includes('src/metadata/') && filenameIsNotAllowed(sourceFile.fileName, metadataFilenames)) {
-            return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
-        }
-        if (sourceFile.fileName.includes('src/spec/') && filenameIsNotAllowed(sourceFile.fileName, specFilenames)) {
+        if (filenameIsNotAllowed(sourceFile.fileName, allowedFilenames)) {
             return [new tslint_1.RuleFailure(sourceFile, 0, 0, Rule.FAILURE_STRING, this.ruleName)];
         }
         return [];
@@ -61,38 +55,49 @@ var filenameIsNotAllowed = function (fileName, allowedFilenames) {
         return !fileName.includes(potentialFilename + ".ts") && !fileName.includes(potentialFilename + "/");
     });
 };
-var sharedFilenames = [
-    'constants',
-    'index',
-    'indexForTest',
-    'types',
+var allowedFilenames = [
+    'src/patterns',
+    'src/index',
+    'src/indexForTest',
+    'src/constants',
+    'src/start',
+    'src/types',
+    'src/material/blocks',
+    'src/material/entities',
+    'src/material/notes',
+    'src/material/parts',
+    'src/material/pieces',
+    'src/material/scales',
+    'src/material/scalars',
+    'src/material/renderings',
+    'src/material/segments',
+    'src/material/wholes',
+    'src/material/constants',
+    'src/material/custom',
+    'src/material/index',
+    'src/material/indexForTest',
+    'src/material/types',
+    'src/metadata/html.d',
+    'src/metadata/metadatas',
+    'src/metadata/posts',
+    'src/metadata/constants',
+    'src/metadata/custom',
+    'src/metadata/index',
+    'src/metadata/indexForTest',
+    'src/metadata/types',
+    'src/spec/attributes',
+    'src/spec/constraints',
+    'src/spec/data',
+    'src/spec/descriptions',
+    'src/spec/initial',
+    'src/spec/orders',
+    'src/spec/presets',
+    'src/spec/specs',
+    'src/spec/validation',
+    'src/spec/constants',
+    'src/spec/custom',
+    'src/spec/index',
+    'src/spec/indexForTest',
+    'src/spec/types',
 ];
-var materialsFilenames = sharedFilenames.concat([
-    'blocks',
-    'entities',
-    'notes',
-    'parts',
-    'pieces',
-    'scales',
-    'scalars',
-    'renderings',
-    'segments',
-    'wholes',
-]);
-var metadataFilenames = sharedFilenames.concat([
-    'html.d',
-    'metadatas',
-    'posts',
-]);
-var specFilenames = sharedFilenames.concat([
-    'attributes',
-    'constraints',
-    'data',
-    'descriptions',
-    'initial',
-    'orders',
-    'presets',
-    'specs',
-    'validation',
-]);
 var templateObject_1, templateObject_2;
