@@ -99,5 +99,10 @@ var allowedFilenames = [
     'src/spec/index',
     'src/spec/indexForTest',
     'src/spec/types',
+    'src/nominal/from',
+    'src/nominal/index',
+    'src/nominal/indexForTest',
+    'src/nominal/to',
+    'src/nominal/types',
 ];
 var templateObject_1, templateObject_2;

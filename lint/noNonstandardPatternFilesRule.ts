@@ -86,4 +86,9 @@ const allowedFilenames: string[] = [
     'src/spec/index',
     'src/spec/indexForTest',
     'src/spec/types',
+    'src/nominal/from',
+    'src/nominal/index',
+    'src/nominal/indexForTest',
+    'src/nominal/to',
+    'src/nominal/types',
 ]
