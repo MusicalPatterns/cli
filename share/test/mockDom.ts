@@ -37,12 +37,3 @@ const mockAudioContext: any = {
 
 global.AudioContext = () => mockAudioContext
 global.webkitAudioContext = () => mockAudioContext
-
-global.XMLHttpRequest = () => ({
-    open: () => {},
-    send: () => {},
-})
-
-global.self = {
-    postMessage: () => {},
-}
