@@ -58,6 +58,12 @@
       "always"
     ],
     "one-line": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": false
+      }
+    ],
     "prefer-method-signature": false,
     "quotemark": [
       true,
