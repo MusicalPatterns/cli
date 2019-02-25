@@ -47,11 +47,14 @@ const startServerIfNecessary: () => Promise<void> =
             return
         }
 
-        return new Promise((resolve: VoidFunction): void => {
+        return new Promise((resolve: VoidFunction, reject: (message: string) => void): void => {
             const server: ChildProcess = exec('make start open=false')
             server.stdout.on('data', (data: string) => {
                 if (data.includes('Compiled successfully.')) {
                     resolve()
+                }
+                if (data.includes('Failed to compile.')) {
+                    reject('Webpack failed to compile.')
                 }
             })
         })
