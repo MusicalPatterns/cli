@@ -84,7 +84,7 @@ Pulls from Github, including all submodules recursively (also updates them).
 
 Pushes to Github, including all submodules.
 
-`musical-patterns-cli run myFile.ts`
+`musical-patterns-cli run file=src/myFile.ts`
 
 Compiles a TypeScript file using the necessary configuration and runs it.
 
