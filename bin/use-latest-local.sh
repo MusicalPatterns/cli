@@ -2,6 +2,8 @@
 
 set -e
 
+. ${CLI_DIR:=./}bin/non_cli/install_in_correct_dependency_section.sh
+
 if [[ "${pattern}" == "" ]] ; then
 	FOLDER_FROM_ANY_SUBMODULE=../../services
 	REPO=${service}
@@ -23,9 +25,4 @@ pushd ${FOLDER_FROM_ANY_SUBMODULE}/${REPO}/ > /dev/null 2>&1
 	mv *.tgz ../fake_npm_${REPO}.tgz
 popd > /dev/null 2>&1
 
-if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm i -D ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}.tgz
-fi
-if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
-	npm i -P ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}.tgz
-fi
+install_in_correct_dependency_section ${FOLDER_FROM_ANY_SUBMODULE}/fake_npm_${REPO}.tgz
