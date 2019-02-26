@@ -6,13 +6,13 @@ kill_on_port() {
 	netstat -an | grep ${PORT_TO_KILL} | grep -m1 LISTEN > /dev/null 2>&1
 	if [[ $? -ne 1 ]] ; then
 		PID_TO_KILL=$(netstat -aon | grep -m1 ${PORT_TO_KILL} | grep LISTEN | awk '{print $5}')
-		taskkill //pid ${PID_TO_KILL} //f
+		taskkill //pid ${PID_TO_KILL} //f > /dev/null 2>&1
 	fi
 }
 
 if [[ -f running ]]; then
+	kill_on_port 8080
 	kill_on_port 8081
 	kill_on_port 8082
-	kill_on_port 8083
 	rm running
 fi
