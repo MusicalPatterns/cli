@@ -18,7 +18,7 @@ import { port } from '../webpack.port'
 
 const HOST: string = 'localhost'
 
-const PUPPETEER_TIMEOUT: number = 200000
+const PUPPETEER_TIMEOUT: number = 100000
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
 
 let browser: Browser
