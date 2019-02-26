@@ -3,10 +3,10 @@
 install_in_correct_dependency_section_if_installed() {
 	DEPENDENCY="$1"
 
-	if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
+	if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 "\-\-\ @musical-patterns/${PACKAGE}") ]] ; then
 		npm i -D "${DEPENDENCY}"
 	fi
-	if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
+	if [[ $(npm list -prod -depth 0 2>/dev/null | grep -m1 "\-\-\ @musical-patterns/${PACKAGE}") ]] ; then
 		npm i -P "${DEPENDENCY}"
 	fi
 }
