@@ -43,10 +43,11 @@ const filenameIsNotAllowed: (fileName: string, allowedFilenames: string[]) => bo
     }
 
 const allowedFilenames: string[] = [
-    'src/patterns',
+    'src/constants',
     'src/index',
     'src/indexForTest',
-    'src/constants',
+    'src/nominal',
+    'src/patterns',
     'src/start',
     'src/types',
     'src/material/blocks',
@@ -86,9 +87,4 @@ const allowedFilenames: string[] = [
     'src/spec/index',
     'src/spec/indexForTest',
     'src/spec/types',
-    'src/nominal/from',
-    'src/nominal/index',
-    'src/nominal/indexForTest',
-    'src/nominal/to',
-    'src/nominal/types',
 ]
