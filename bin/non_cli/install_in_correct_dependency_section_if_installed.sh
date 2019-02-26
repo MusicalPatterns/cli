@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-install_in_correct_dependency_section() {
+install_in_correct_dependency_section_if_installed() {
 	DEPENDENCY="$1"
 
 	if [[ $(npm list -dev -depth 0 2>/dev/null | grep -m1 @musical-patterns/${PACKAGE}) ]] ; then
@@ -10,4 +10,4 @@ install_in_correct_dependency_section() {
 		npm i -P "${DEPENDENCY}"
 	fi
 }
-export -f install_in_correct_dependency_section
+export -f install_in_correct_dependency_section_if_installed

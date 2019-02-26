@@ -23,9 +23,8 @@ check_config_files_for_service() {
 	shopt -s dotglob
 	SHARED_DIR=node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
-	for SHARED_FILE in ${SHARED_DIR}**/*
-	do
-		if [[ -f "${SHARED_FILE}" ]]; then
+	for SHARED_FILE in ${SHARED_DIR}**/* ; do
+		if [[ -f "${SHARED_FILE}" ]] ; then
 			check_config_file ${SHARED_FILE:SHARED_DIR_PATH_CHAR_LENGTH} ${SERVICE}
 		fi
 	done

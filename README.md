@@ -128,6 +128,7 @@ Runs your tests. Use `headful=true` for integration suites if you want to see wh
 `musical-patterns-cli update service=utilities`
 
 Installs the latest version of a service. Also works with utilities. Respects whether it is a prod or dev dependency.
+If run without a specified service or pattern, will update all @musical-patterns packages.
 
 `musical-patterns-cli use-latest-local service=performer`
 
