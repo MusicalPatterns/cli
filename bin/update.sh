@@ -14,14 +14,14 @@ if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 	make stop
 
 	for i in "${!SERVICES[@]}" ; do
-		SERVICE_TO_UPDATE=${SERVICES[i]}
-		if [[ ${SERVICE_TO_UPDATE} != "cli" ]] ; then
-			install_in_correct_dependency_section_if_installed @musical-patterns/${SERVICE_TO_UPDATE}@latest
+		PACKAGE=${SERVICES[i]}
+		if [[ ${PACKAGE} != "cli" ]] ; then
+			install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 		fi
 	done
 	for i in "${!PATTERNS[@]}" ; do
-		PATTERN_TO_UPDATE=pattern-${PATTERNS[i]}
-		install_in_correct_dependency_section_if_installed @musical-patterns/${PATTERN_TO_UPDATE}@latest
+		PACKAGE=pattern-${PATTERNS[i]}
+		install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 	done
 else
 	install_in_correct_dependency_section_if_installed @musical-patterns/${REPO}@latest
