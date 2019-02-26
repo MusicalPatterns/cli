@@ -113,6 +113,10 @@ Stashes recursively.
 
 Pops matching stashes recursively.
 
+`musical-patterns-cli stop`
+
+Stops the server (including one for testing) if it is running.
+
 `musical-patterns-cli switch-back-to-remote service=performer`
 
 Undoes the `use-latest-local` command.

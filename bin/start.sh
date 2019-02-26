@@ -7,3 +7,5 @@ else
 fi
 
 webpack-dev-server --config webpack.qa.js --color ${START_PART}
+
+touch running
