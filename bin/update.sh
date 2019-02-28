@@ -12,6 +12,8 @@ fi
 
 if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 	make stop
+	DEV_DEPS_LIST=$(npm list -dev -depth 0 2>/dev/null)
+	PROD_DEPS_LIST=$(npm list -prod -depth 0 2>/dev/null)
 
 	for i in "${!SERVICES[@]}" ; do
 		PACKAGE=${SERVICES[i]}
