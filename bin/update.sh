@@ -26,5 +26,5 @@ if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 		install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 	done
 else
-	install_in_correct_dependency_section_if_installed @musical-patterns/${REPO}@latest
+	install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 fi

@@ -125,9 +125,9 @@ Undoes the `use-latest-local` command.
 
 Runs your tests. Use `headful=true` for integration suites if you want to see what's going on.
 
-`musical-patterns-cli update service=utilities`
+`musical-patterns-cli update pattern=performer-qa`
 
-Installs the latest version of a service. Also works with utilities. Respects whether it is a prod or dev dependency.
+Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
 If run without a specified service or pattern, will update all @musical-patterns packages.
 
 `musical-patterns-cli use-latest-local service=performer`
