@@ -13,5 +13,4 @@ export PATTERNS=(
 "tsraxcfaubdj"
 "xenharmonic-series"
 "zdaubyaos"
-"lab-about-page"
 )
