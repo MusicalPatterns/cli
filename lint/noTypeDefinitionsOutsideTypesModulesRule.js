@@ -49,7 +49,7 @@ var Rule = /** @class */ (function (_super) {
 exports.Rule = Rule;
 function walk(ctx) {
     ts.forEachChild(ctx.sourceFile, function (node) {
-        var text = node.getText().trim();
+        var text = node.getText().replace(/^\s+|\s+$/gm, '');
         if (text.startsWith('type ') || text.startsWith('interface ') || text.startsWith('enum ')) {
             ctx.addFailureAtNode(node, Rule.FAILURE_STRING);
         }
