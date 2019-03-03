@@ -22,7 +22,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static FAILURE_STRING = 'Do not declare types here. Please move them to the nearest "types.ts" module.'
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-        if (sourceFile.fileName.includes('types.ts')) {
+        if (sourceFile.fileName.includes('types.ts') || sourceFile.fileName.includes('nominal.ts')) {
             return []
         }
 
