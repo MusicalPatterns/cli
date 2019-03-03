@@ -50,7 +50,7 @@ exports.Rule = Rule;
 function walk(ctx) {
     ts.forEachChild(ctx.sourceFile, function (node) {
         var text = node.getText();
-        if (text.includes('type ') || text.includes('interface ') || text.includes('enum ')) {
+        if (text.startsWith('type ') || text.startsWith('interface ') || text.startsWith('enum ')) {
             ctx.addFailureAtNode(node, Rule.FAILURE_STRING);
         }
     });
