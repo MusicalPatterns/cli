@@ -6,9 +6,6 @@ Makefile:
 	@:
 
 build:
-	@:
-
-build-lint:
 	@tsc lint/*.ts > /dev/null 2>&1 || true
 
 build-local:
