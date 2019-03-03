@@ -32,9 +32,13 @@ export class Rule extends Lint.Rules.AbstractRule {
 
 function walk(ctx: Lint.WalkContext<string[]>) {
     ts.forEachChild(ctx.sourceFile, (node: ts.Node): void => {
-        const text: string = node.getText().replace(/^\s+|\s+$/gm,'')
-        if (text.startsWith('type ') || text.startsWith('interface ') || text.startsWith('enum ')) {
-            ctx.addFailureAtNode(node, Rule.FAILURE_STRING)
-        }
+        const text: string = node.getText(ctx.sourceFile)
+        const trimmedText: string = text.replace(/^\s+|\s+$/gm, '')
+        const lines: string[] = trimmedText.split('\n')
+        lines.forEach((line: string) => {
+            if (line.startsWith('type ') || line.startsWith('interface ') || line.startsWith('enum ')) {
+                ctx.addFailureAtNode(node, Rule.FAILURE_STRING)
+            }
+        })
     })
 }
