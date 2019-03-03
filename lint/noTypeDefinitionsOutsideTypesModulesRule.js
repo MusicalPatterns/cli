@@ -26,7 +26,7 @@ var Rule = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Rule.prototype.apply = function (sourceFile) {
-        if (sourceFile.fileName.includes('types.ts')) {
+        if (sourceFile.fileName.includes('types.ts') || sourceFile.fileName.includes('nominal.ts')) {
             return [];
         }
         return this.applyWithFunction(sourceFile, walk, this.ruleArguments);
@@ -49,7 +49,7 @@ var Rule = /** @class */ (function (_super) {
 exports.Rule = Rule;
 function walk(ctx) {
     ts.forEachChild(ctx.sourceFile, function (node) {
-        var text = node.getText();
+        var text = node.getText().trim();
         if (text.startsWith('type ') || text.startsWith('interface ') || text.startsWith('enum ')) {
             ctx.addFailureAtNode(node, Rule.FAILURE_STRING);
         }
