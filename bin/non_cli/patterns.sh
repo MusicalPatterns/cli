@@ -13,4 +13,5 @@ export PATTERNS=(
 "tsraxcfaubdj"
 "xenharmonic-series"
 "zdaubyaos"
+"prototyper"
 )
