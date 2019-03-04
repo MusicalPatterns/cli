@@ -8,13 +8,13 @@ catch (e) {
     // @ts-ignore
     require('../node_modules/@musical-patterns/cli/node_modules/browser-env')()
 }
-// @ts-ignore
-declare const global: any
 
+// @ts-ignore
 global.requestAnimationFrame = (callback: any) => {
     setTimeout(callback, 0)
 }
 
+// @ts-ignore
 global.cancelAnimationFrame = (id: number) => {
     clearTimeout(id)
 }
@@ -35,5 +35,7 @@ const mockAudioContext: any = {
     createPeriodicWave: () => {},
 }
 
+// @ts-ignore
 global.AudioContext = () => mockAudioContext
+// @ts-ignore
 global.webkitAudioContext = () => mockAudioContext
