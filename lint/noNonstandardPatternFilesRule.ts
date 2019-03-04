@@ -51,6 +51,7 @@ const allowedFilenames: string[] = [
     'src/start',
     'src/types',
     'src/material/blocks',
+    'src/material/contours',
     'src/material/entities',
     'src/material/notes',
     'src/material/parts',
