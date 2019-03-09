@@ -2,7 +2,8 @@
   "extends": [
     "tslint:all",
     "tslint-eslint-rules",
-    "tslint-sonarts"
+    "tslint-sonarts",
+    "tslint-react"
   ],
   "rulesDirectory": [
     "node_modules/@musical-patterns/cli/lint"
