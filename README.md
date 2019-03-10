@@ -59,7 +59,7 @@ Used by the `use-latest-local` command.
 
 `musical-patterns-cli commit msg="v1.0.33: good stuff"`
 
-Generally meant to be run ad part of the ship command, but available if you're interested. 
+Generally meant to be run along with the ship command, but available if you're interested. 
 
 Commits recursively (applying message to all submodules all the way down).
 

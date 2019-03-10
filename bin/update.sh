@@ -6,7 +6,7 @@
 . ${CLI_DIR:=./}bin/non_cli/patterns.sh
 
 if [[ "${service}" == "cli" ]] ; then
-	echo "Please run 'npm i @musical-patterns/cli@latest' yourself. I cannot do it for you, as I would try to delete myself as part of updating myself."
+	echo "Please run 'npm i @musical-patterns/cli@latest' yourself. I cannot do it for you, as I would try to delete myself while updating myself."
 	exit 1
 fi
 
