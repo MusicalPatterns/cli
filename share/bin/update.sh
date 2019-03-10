@@ -18,7 +18,9 @@ if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 		install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 	done
 	for i in "${!PATTERNS[@]}" ; do
-		PACKAGE=pattern-${PATTERNS[i]}
+		CAMEL_CASE_PATTERN=${PATTERNS[i]}
+		KEBAB_CASE_PATTERN=$(sed 's/^[[:upper:]]/\L&/;s/[[:upper:]]/\L\-&/g' <<< ${CAMEL_CASE_PATTERN})
+		PACKAGE=pattern-${KEBAB_CASE_PATTERN}
 		install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 	done
 else
