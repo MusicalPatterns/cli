@@ -6,7 +6,7 @@ Makefile:
 	@:
 
 update:
-	bash bin/update.sh
+	@bash bin/update.sh
 
 %:
 	@musical-patterns-cli $@

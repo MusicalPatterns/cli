@@ -5,8 +5,11 @@
 . ./node_modules/@musical-patterns/cli/bin/non_cli/services.sh
 . ./node_modules/@musical-patterns/cli/bin/non_cli/patterns.sh
 
-if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
+if [[ "${service}" == "cli" || "${service}" == "" ]] ; then
 	make stop
+fi
+
+if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 	DEV_DEPS_LIST=$(npm list -dev -depth 0 2>/dev/null)
 	PROD_DEPS_LIST=$(npm list -prod -depth 0 2>/dev/null)
 
