@@ -8,10 +8,10 @@ export PATTERNS=(
 "omnizonk"
 "performer-qa"
 "playroom-test"
+"prototyper"
 "stepwise"
 "template"
 "tsraxcfaubdj"
 "xenharmonic-series"
 "zdaubyaos"
-"prototyper"
 )

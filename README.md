@@ -44,7 +44,7 @@ These configuration files are for building, testing, linting, publishing, storin
 - webpack.local.js
 - webpack.publish.js
 
-The Makefile aliases the CLI commands as `make` commands.
+The shared Makefile aliases the CLI commands as `make` commands.
 
 ## the CLI commands
 
@@ -125,13 +125,21 @@ Undoes the `use-latest-local` command.
 
 Runs your tests. Use `headful=true` for integration suites if you want to see what's going on.
 
-`musical-patterns-cli update pattern=performer-qa`
-
-Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
-If run without a specified service or pattern, will update all @musical-patterns packages.
-
 `musical-patterns-cli use-latest-local service=performer`
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.
 If you provide `built=true`, will skip re-building the target.
 You can also pass it a `pattern` instead of a `service`.
+
+## `make update`
+
+One command is a bit special: `update`. It is included in the shared `Makefile` and can be run with `make update`.
+But it does not actually use the `musical-patterns-cli`. It runs a bash script which is also shared into your `bin` folder.
+If it did not avoid running the update command itself, it could not update itself.
+
+That all said, here is the usage:
+
+`make update pattern=performer-qa`
+
+Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
+If run without a specified service or pattern, will update all @musical-patterns packages.
