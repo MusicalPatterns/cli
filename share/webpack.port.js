@@ -2,13 +2,13 @@ const path = require('path')
 
 const repo = __dirname.split(path.sep).pop()
 
-const testPorts = {
+const servicePorts = {
     performer: 8081,
     playroom: 8082,
     lab: 8083,
 }
 
-const port = process.env.NODE_ENV === 'test' ? testPorts[ repo ] : 8080
+const port = servicePorts[ repo ] || 8080
 
 module.exports = {
     port,
