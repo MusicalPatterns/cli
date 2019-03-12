@@ -6,6 +6,4 @@ else
 	START_PART=""
 fi
 
-touch running
-
 webpack-dev-server --config webpack.qa.js --color ${START_PART}

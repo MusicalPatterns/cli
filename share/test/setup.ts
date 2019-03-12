@@ -14,7 +14,7 @@ import { existsSync } from 'fs'
 import { createServer, Server, Socket } from 'net'
 import { Browser, launch, Page } from 'puppeteer'
 // @ts-ignore
-import { port } from '../webpack.port'
+import { port } from '../bin/port'
 
 const HOST: string = 'localhost'
 

@@ -10,10 +10,8 @@ kill_on_port() {
 	fi
 }
 
-if [[ -f running ]]; then
-	kill_on_port 8080
-	kill_on_port 8081
-	kill_on_port 8082
-	kill_on_port 8083
-	rm running
-fi
+REPO=$(basename "$PWD")
+PORT_TO_KILL_ON=$(sed -n 's/^${REPO}://p' ports.txt)
+DEFAULT_PORT=$(sed -n 's/^default://p' ports.txt)
+
+kill_on_port ${PORT_TO_KILL_ON:=${DEFAULT_PORT}}
