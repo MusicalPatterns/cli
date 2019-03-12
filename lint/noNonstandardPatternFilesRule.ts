@@ -57,7 +57,7 @@ const allowedFilenames: string[] = [
     'src/material/notes',
     'src/material/pieces',
     'src/material/scales',
-    'src/material/material',
+    'src/material/materials',
     'src/material/scalars',
     'src/material/renderings',
     'src/material/segments',
