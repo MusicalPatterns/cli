@@ -46,7 +46,7 @@ const allowedFilenames: string[] = [
     'src/constants.ts',
     'src/index.ts',
     'src/indexForTest.ts',
-    'src/nominal.ts',
+    'src/nominals.ts',
     'src/patterns.ts',
     'src/start.ts',
     'src/types.ts',
