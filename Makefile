@@ -29,6 +29,9 @@ pull:
 push:
 	@bin/push.sh
 
+restart:
+	@:
+
 run:
 	@:
 
