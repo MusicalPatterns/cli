@@ -119,7 +119,7 @@ Pops matching stashes recursively.
 
 `musical-patterns-cli stop`
 
-Stops the server (including one for testing) if it is running.
+Stops the server for the current pattern or service if it is running.
 
 `musical-patterns-cli switch-back-to-remote service=performer`
 
@@ -147,3 +147,6 @@ That all said, here is the usage:
 
 Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
 If run without a specified service or pattern, will update all @musical-patterns packages.
+
+Note: if the server for the current repo is running, and if `@musical-patterns/cli` itself is included in the updates, the `update` command calls `stop`; 
+otherwise that would cause a failure for trying to delete the CLI's `start.sh` file which was running a process.
