@@ -11,7 +11,7 @@ kill_on_port() {
 }
 
 REPO=$(basename "$PWD")
-PORT_TO_KILL_ON=$(sed -n 's/^${REPO}://p' ports.txt)
-DEFAULT_PORT=$(sed -n 's/^default://p' ports.txt)
+PORT_TO_KILL_ON=$(sed -n "s/^${REPO}://p" ports.txt)
+DEFAULT_PORT=$(sed -n "s/^default://p" ports.txt)
 
 kill_on_port ${PORT_TO_KILL_ON:=${DEFAULT_PORT}}
