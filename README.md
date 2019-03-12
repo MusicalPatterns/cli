@@ -2,9 +2,9 @@
 
 # Musical Patterns - CLI
 
-The Musical Patterns CLI provides all the common commands, configuration, and dependencies for developing a Musical Patterns repo.
+Provides all the common commands, configuration, and dependencies for developing a Musical Patterns repo.
 
-It works for both service and pattern repos.
+Works for both service and pattern repos.
 
 When you install it as an `npm` package, `@musical-patterns/cli` copies its configuration files up into the installing repo.
 
@@ -45,6 +45,10 @@ These configuration files are for building, testing, linting, publishing, storin
 - webpack.publish.js
 
 The shared Makefile aliases the CLI commands as `make` commands.
+
+But wait, there's more! The `cli` service is also responsible for executing the sharing of other services' configuration files.
+At this time, both the `snapshot` and the `playroom` service stage files to be shared with the repos they're installed in.
+Since every repo uses the `cli`, they rely on it to share their latest configuration when you install the `cli` after installing them.
 
 ## the CLI commands
 
