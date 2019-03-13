@@ -10,8 +10,8 @@ if [[ "${service}" == "cli" || "${service}" == "" ]] ; then
 fi
 
 if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
-	DEV_DEPS_LIST=$(npm list -dev -depth 0 2>/dev/null)
-	PROD_DEPS_LIST=$(npm list -prod -depth 0 2>/dev/null)
+	DEV_DEPS_LIST=$(npm list -dev -depth 0 2>/dev/null || true)
+	PROD_DEPS_LIST=$(npm list -prod -depth 0 2>/dev/null || true)
 
 	for i in "${!SERVICES[@]}" ; do
 		PACKAGE=${SERVICES[i]}
