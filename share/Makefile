@@ -9,6 +9,6 @@ update:
 	@bash bin/update.sh
 
 %:
-	@musical-patterns-cli $@
+	@bash ./node_modules/.bin/musical-patterns-cli $@
 
 -include Makefile.*
