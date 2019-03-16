@@ -67,10 +67,6 @@ Generally meant to be run along with the ship command, but available if you're i
 
 Commits recursively (applying message to all submodules all the way down).
 
-`musical-patterns-cli fast-ship msg="v1.0.33: good stuff"`
-
-Same as ship, but without checking the config still matches, linting, or running tests.
-
 `musical-patterns-cli lint`
 
 Uses tslint.
@@ -107,6 +103,9 @@ The omni-command.
 - commits all changes (appending your `msg` to the new version number as the message)
 - pushes
 - publishes
+
+Use option `fast=true` to skip the first few safety steps (config match checking, testing, and linting).
+As with the `publish` command, you can use `force=true` if your working tree is clean but you want to ship anyway.
 
 `musical-patterns-cli start`
 
