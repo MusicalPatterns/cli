@@ -173,7 +173,7 @@ Which the roll-ups are combinations of:
 
 Each of these roll-ups also includes two other webpack configs: `webpack.common` and `webpack.self`. 
 Common is common to all repos.
-Self is optional - if you create a `webpack.self ` in your repo it will use it, but it's not necessary.
+Self is provided by the repo itself (or shared with it by some service, such as `@musical-patterns/playroom`).
 
 ## typescript
 
