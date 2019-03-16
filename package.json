@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.497",
+  "version": "1.0.498",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -21,7 +21,6 @@
     "favicons-webpack-plugin": "0.0.9",
     "fork-ts-checker-webpack-plugin": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "ignore-not-found-export-plugin": "^1.0.1",
     "jasmine": "^3.3.1",
     "jasmine-spec-reporter": "^4.2.1",
     "puppeteer": "^1.12.2",
