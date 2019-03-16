@@ -127,7 +127,7 @@ Stops the server for the current pattern or service if it is running.
 
 `musical-patterns-cli switch-back-to-remote service=performer`
 
-Undoes the `use-latest-local` command.
+Undoes the `use-latest-local` command. See that entry for more details.
 
 `musical-patterns-cli test`
 
@@ -137,7 +137,7 @@ Runs your tests. Use `headful=true` for integration suites if you want to see wh
 
 To save oneself from deploying experimental changes to the remote, will simulate having the changes by building your local changes and installing those instead.
 If you provide `built=true`, will skip re-building the target.
-You can also pass it a `pattern` instead of a `service`.
+You can also pass it a `pattern` instead of a `service`. Write the pattern name in camel case.
 
 ## `make update`
 
@@ -147,10 +147,11 @@ If it did not avoid running the update command itself, it could not update itsel
 
 That all said, here is the usage:
 
-`make update pattern=performer-qa`
+`make update pattern=performerQa`
 
 Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
 If run without a specified service or pattern, will update all @musical-patterns packages.
+Write the pattern name in camel case.
 
 Note: if the server for the current repo is running, and if `@musical-patterns/cli` itself is included in the updates, the `update` command calls `stop`; 
 otherwise that would cause a failure for trying to delete the CLI's `start.sh` file which was running a process.
