@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-pushd test/src > /dev/null 2>&1
-	NON_TEST_FILES_IN_TEST_SRC=$(find . -type f -not -name "*.test.ts")
-	if [[ ${NON_TEST_FILES_IN_TEST_SRC} != "" ]] ; then
-		echo "You have some files in your test/src directory which do not have the necessary .test.ts extension and are not being run. Please fix and re-run."
-		echo ${NON_TEST_FILES_IN_TEST_SRC}
-		exit 1
-	fi
-popd > /dev/null 2>&1
+if [[ -d test/src ]] ; then
+	pushd test/src > /dev/null 2>&1
+		NON_TEST_FILES_IN_TEST_SRC=$(find . -type f -not -name "*.test.ts")
+		if [[ ${NON_TEST_FILES_IN_TEST_SRC} != "" ]] ; then
+			echo "You have some files in your test/src directory which do not have the necessary .test.ts extension and are not being run. Please fix and re-run."
+			echo ${NON_TEST_FILES_IN_TEST_SRC}
+			exit 1
+		fi
+	popd > /dev/null 2>&1
+fi
 if [[ -d test/integration ]] ; then
 	pushd test/integration > /dev/null 2>&1
 		NON_TEST_FILES_IN_TEST_INTEGRATION=$(find . -type f -not -name "*.test.ts")
