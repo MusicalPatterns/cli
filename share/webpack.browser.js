@@ -8,6 +8,9 @@ module.exports = {
     devServer: {
         open: true,
         port,
+        stats: {
+            warningsFilter: /export .* was not found in/,
+        },
     },
     module: {
         rules: [
@@ -29,7 +32,4 @@ module.exports = {
         }),
         new ForkTsCheckerWebpackPlugin(),
     ],
-    stats: {
-        warningsFilter: /export .* was not found in/,
-    },
 }
