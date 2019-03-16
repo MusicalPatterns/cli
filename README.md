@@ -139,7 +139,7 @@ To save oneself from deploying experimental changes to the remote, will simulate
 If you provide `built=true`, will skip re-building the target.
 You can also pass it a `pattern` instead of a `service`. Write the pattern name in camel case.
 
-## `make update`
+### `make update`
 
 One command is a bit special: `update`. It is included in the shared `Makefile` and can be run with `make update`.
 But it does not actually use the `musical-patterns-cli`. It runs a bash script which is also shared into your `bin` folder.
@@ -155,3 +155,27 @@ Write the pattern name in camel case.
 
 Note: if the server for the current repo is running, and if `@musical-patterns/cli` itself is included in the updates, the `update` command calls `stop`; 
 otherwise that would cause a failure for trying to delete the CLI's `start.sh` file which was running a process.
+
+## configuration
+
+### webpack
+
+The idea here is that we've got some building block configs, not used directly by commands:
+
+- `webpack.dev` vs `webpack.prod` 
+- `webpack.browser` vs `webpack.library` 
+
+Which the roll-ups are combinations of:
+
+- `webpack.local` 		= **dev + library**, used by the `use-latest-local` (`build-local`, directly) command when you need a version of your library build for development
+- `webpack.qa`:			= **dev + browser**, used by the `start` command, for automated testing and qa'ing the app yourself
+- `webpack.publish`:	= **prod + library**, used by the `publish` (`build`, directly) command when you need a version of your library build for production
+- `webpack.deploy`:		= **prod + browser**, used by no commands at this time, but hey, maybe in theory it could make sense
+
+Each of these roll-ups also includes two other webpack configs: `webpack.common` and `webpack.self`. 
+Common is common to all repos.
+Self is optional - if you create a `webpack.self ` in your repo it will use it, but it's not necessary.
+
+## typescript
+
+(more on this later)

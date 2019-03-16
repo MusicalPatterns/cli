@@ -5,6 +5,15 @@ module.exports = {
         globalObject: 'this',
         libraryTarget: 'umd',
     },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /test\//,
+            },
+        ],
+    },
     externals: [
         '@musical-patterns/cli',
         '@musical-patterns/compiler',
