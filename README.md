@@ -97,7 +97,6 @@ Compiles a TypeScript file using the necessary configuration and runs it.
 The omni-command. 
 
 - confirms that you haven't modified any of the standard configuration (if you have, consider whether all other repos should change similarly, and if so, change it here in the CLI; otherwise, figure some other way out)
-- updates dependencies
 - runs tests
 - runs the linter
 - patches the version
@@ -105,7 +104,7 @@ The omni-command.
 - pushes
 - publishes
 
-Use option `fast=true` to skip the first few safety steps (config match checking, updating, testing, and linting).
+Use option `fast=true` to skip the first few safety steps (config match checking, testing, and linting).
 As with the `publish` command, you can use `force=true` if your working tree is clean but you want to ship anyway.
 
 `musical-patterns-cli start`
