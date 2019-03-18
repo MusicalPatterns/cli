@@ -50,7 +50,7 @@ const startServerIfNecessary: () => Promise<void> =
         return new Promise((resolve: VoidFunction, reject: (message: string) => void): void => {
             const server: ChildProcess = exec('make start open=false')
             server.stdout.on('data', (data: string) => {
-                if (data.includes('Compiled successfully.')) {
+                if (data.includes('Compiled successfully.') || data.includes('Compiled with warnings.')) {
                     resolve()
                 }
                 if (data.includes('Failed to compile.')) {
