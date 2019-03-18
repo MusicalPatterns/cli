@@ -12,6 +12,7 @@ fast_ship() {
 
 ship() {
 	bash ${CLI_DIR:=./}bin/sharing/check_config.sh
+	make update || return
 	make test || return
 	make lint || return
 	fast_ship
