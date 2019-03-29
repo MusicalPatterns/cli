@@ -9,7 +9,7 @@ check_config_file() {
 	set +e
 	cmp -s "${FILE}" "node_modules/@musical-patterns/${SERVICE}/share/${FILE}"
 	if [[ $? != 0 ]] ; then
-		echo "mismatch against standardized configuration: ${FILE}. Please fix manually, or re-run 'npm i @musical-patterns/cli'."
+		echo "mismatch against standardized configuration: ${FILE}. Please fix manually, or re-run 'make update'."
 		set -e
 		return 1
 	fi
