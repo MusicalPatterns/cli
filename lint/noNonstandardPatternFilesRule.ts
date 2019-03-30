@@ -67,6 +67,8 @@ const allowedFilenames: string[] = [
     'src/material/piece/',
     'src/material/scales.ts',
     'src/material/scale/',
+    'src/material/sections.ts/',
+    'src/material/section/',
     'src/material/materials.ts',
     'src/material/material/',
     'src/material/scalars.ts',
