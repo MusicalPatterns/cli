@@ -14,5 +14,4 @@ export PATTERNS=(
 "tsraxcfaubdj"
 "xenharmonicSeries"
 "zdaubyaos"
-"playroomTestFinite"
 )
