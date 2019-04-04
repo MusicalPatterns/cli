@@ -54,8 +54,8 @@ share_config_files_for_service() {
 }
 export -f share_config_files_for_service
 
-mv ${CLI_DIR:=./}bin/sharing/gitignore ${ESCAPE_CLI_DIR}.gitignore
-mv ${CLI_DIR:=./}bin/sharing/npmignore ${ESCAPE_CLI_DIR}.npmignore
+cp ${CLI_DIR:=./}bin/sharing/gitignore ${ESCAPE_CLI_DIR}.gitignore
+cp ${CLI_DIR:=./}bin/sharing/npmignore ${ESCAPE_CLI_DIR}.npmignore
 
 for i in "${!SERVICES[@]}" ; do
 	share_config_files_for_service "${SERVICES[i]}"
