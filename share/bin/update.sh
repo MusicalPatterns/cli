@@ -26,3 +26,5 @@ if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 else
 	install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 fi
+
+bash ./node_modules/@musical-patterns/cli/bin/sharing/share_config.sh
