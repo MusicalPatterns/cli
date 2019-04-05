@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.527",
+  "version": "1.0.529",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
