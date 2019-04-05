@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 if [[ CLI_DIR == "./node_modules/@musical-patterns/cli/" ]] ; then
-	echo "setting escape cli dir to ./ because CLI_DIR was "${CLI_DIR}
 	export ESCAPE_CLI_DIR="./"
 else
-	echo "setting escape cli dir to ../../../ because CLI_DIR was "${CLI_DIR}
 	export ESCAPE_CLI_DIR="../../../"
 fi
 
@@ -12,8 +10,6 @@ fi
 
 add_config_file_to_gitignore() {
 	FILE="$1"
-
-	echo "am i defined in here"${ESCAPE_CLI_DIR}
 
 	if [[ ${FILE} == "LICENSE" || ${FILE} == ".travis.yml" ]] ; then
 		return 0
