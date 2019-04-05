@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if [[ FROM_CLI == "true" ]] ; then
+	export ESCAPE_CLI_DIR="../../../"
+else
+	export ESCAPE_CLI_DIR="./"
+fi
+
 . ${CLI_DIR:=./}bin/non_cli/services.sh
 
 add_config_file_to_gitignore() {
@@ -9,7 +15,7 @@ add_config_file_to_gitignore() {
 		return 0
 	fi
 
-	grep -q -x -F "${FILE}" .gitignore || echo "${FILE}" >> .gitignore
+	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIR}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIR}.gitignore
 }
 export -f add_config_file_to_gitignore
 
@@ -19,7 +25,7 @@ make_dir_for_config_file_if_necessary() {
 	DIR=$(grep -Po '.*(?=\/)' <<< "${FILE}")
 	set -e
 	if [[ ${DIR} != "" ]] ; then
-		mkdir -p ${DIR}
+		mkdir -p ${ESCAPE_CLI_DIR}${DIR}
 	fi
 }
 export -f make_dir_for_config_file_if_necessary
@@ -30,7 +36,7 @@ share_config_file() {
 	FILENAME=${2:LENGTH_TO_STRIP}
 
 	make_dir_for_config_file_if_necessary ${FILENAME}
-	cp ${FILE_TO_SHARE} ${FILENAME}
+	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIR}${FILENAME}
 
 	add_config_file_to_gitignore ${FILENAME}
 }
@@ -39,7 +45,7 @@ export -f share_config_file
 share_config_files_for_service() {
 	SERVICE=${1:=cli}
 
-	SHARED_DIR=./node_modules/@musical-patterns/${SERVICE}/share/
+	SHARED_DIR=${ESCAPE_CLI_DIR}node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 
 	if [[ -d ${SHARED_DIR} ]] ; then
@@ -48,8 +54,8 @@ share_config_files_for_service() {
 }
 export -f share_config_files_for_service
 
-cp ${CLI_DIR:=./}bin/sharing/gitignore .gitignore
-cp ${CLI_DIR:=./}bin/sharing/npmignore .npmignore
+mv bin/sharing/gitignore ${ESCAPE_CLI_DIR}.gitignore
+mv bin/sharing/npmignore ${ESCAPE_CLI_DIR}.npmignore
 
 for i in "${!SERVICES[@]}" ; do
 	share_config_files_for_service "${SERVICES[i]}"
