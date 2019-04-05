@@ -12,6 +12,9 @@ module.exports = {
             warningsFilter: /export .* was not found in/,
         },
     },
+    output: {
+        filename: 'index.[contenthash].js',
+    },
     module: {
         rules: [
             {
@@ -29,7 +32,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Musical Patterns',
             meta: { viewport: 'width=device-width' },
-            hash: true,
         }),
         new ForkTsCheckerWebpackPlugin(),
     ],
