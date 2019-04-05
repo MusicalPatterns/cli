@@ -9,6 +9,7 @@ module.exports = {
         'test/mockDom.ts',
         'test/setup.ts',
         'test/reporter.ts',
+        'test/noFailureOnNonEmptySuite.ts'
     ],
     oneFailurePerSpec: false,
     random: false,
