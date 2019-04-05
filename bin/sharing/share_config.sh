@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-if [[ FROM_CLI == "true" ]] ; then
+if [[ ${FROM_CLI} == "true" ]] ; then
+	echo "woot, successfully identified being called from postinstall script "${FROM_CLI}
 	export ESCAPE_CLI_DIR="../../../"
 else
+	echo "woot, successfully identified NOT being called from postinstall script "${FROM_CLI}
 	export ESCAPE_CLI_DIR="./"
+fi
+
+if [[ ${CLI_DIR} == "./node_modules/@musical-patterns/cli/" ]] ; then
+	echo "woot, successfully identified being called from update script "${CLI_DIR}
+else
+	echo "woot, successfully identified NOT being called from update script "${CLI_DIR}
 fi
 
 . ${CLI_DIR:=./}bin/non_cli/services.sh
