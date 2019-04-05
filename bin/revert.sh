@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git revert HEAD^
+git revert HEAD^ --no-edit
 
 PACKAGE_NAME=$(cat package.json 2>/dev/null | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
 LATEST_VERSION=$(npm show ${PACKAGE_NAME} version)
