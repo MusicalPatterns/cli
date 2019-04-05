@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ CLI_DIR == "./node_modules/@musical-patterns/cli/" ]] ; then
-	export ESCAPE_CLI_DIR="./"
-else
-	export ESCAPE_CLI_DIR="../../../"
-fi
-
 . ${CLI_DIR:=./}bin/non_cli/services.sh
 
 add_config_file_to_gitignore() {
@@ -15,7 +9,7 @@ add_config_file_to_gitignore() {
 		return 0
 	fi
 
-	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIR}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIR}.gitignore
+	grep -q -x -F "${FILE}" .gitignore || echo "${FILE}" >> .gitignore
 }
 export -f add_config_file_to_gitignore
 
@@ -25,7 +19,7 @@ make_dir_for_config_file_if_necessary() {
 	DIR=$(grep -Po '.*(?=\/)' <<< "${FILE}")
 	set -e
 	if [[ ${DIR} != "" ]] ; then
-		mkdir -p ${ESCAPE_CLI_DIR}${DIR}
+		mkdir -p ${DIR}
 	fi
 }
 export -f make_dir_for_config_file_if_necessary
@@ -54,8 +48,8 @@ share_config_files_for_service() {
 }
 export -f share_config_files_for_service
 
-cp ${CLI_DIR:=./}bin/sharing/gitignore ${ESCAPE_CLI_DIR}.gitignore
-cp ${CLI_DIR:=./}bin/sharing/npmignore ${ESCAPE_CLI_DIR}.npmignore
+cp ${CLI_DIR:=./}bin/sharing/gitignore .gitignore
+cp ${CLI_DIR:=./}bin/sharing/npmignore .npmignore
 
 for i in "${!SERVICES[@]}" ; do
 	share_config_files_for_service "${SERVICES[i]}"
