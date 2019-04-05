@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 if [[ CLI_DIR == "./node_modules/@musical-patterns/cli/" ]] ; then
+	echo "setting escape cli dir to ./ because CLI_DIR was "${CLI_DIR}
 	ESCAPE_CLI_DIR="./"
 else
+	echo "setting escape cli dir to ../../../ because CLI_DIR was "${CLI_DIR}
 	ESCAPE_CLI_DIR="../../../"
 fi
 
