@@ -36,7 +36,7 @@ share_config_file() {
 	FILENAME=${2:LENGTH_TO_STRIP}
 
 	make_dir_for_config_file_if_necessary ${FILENAME}
-	cp ${FILE_TO_SHARE} ${ESCAPE_CLI_DIR}${FILENAME}
+	cp ${FILE_TO_SHARE} ${FILENAME}
 
 	add_config_file_to_gitignore ${FILENAME}
 }
@@ -45,7 +45,7 @@ export -f share_config_file
 share_config_files_for_service() {
 	SERVICE=${1:=cli}
 
-	SHARED_DIR=${ESCAPE_CLI_DIR}node_modules/@musical-patterns/${SERVICE}/share/
+	SHARED_DIR=./node_modules/@musical-patterns/${SERVICE}/share/
 	SHARED_DIR_PATH_CHAR_LENGTH=${#SHARED_DIR}
 
 	if [[ -d ${SHARED_DIR} ]] ; then
