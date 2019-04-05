@@ -31,6 +31,8 @@ share_config_file() {
 	FILE_TO_SHARE=$2
 	FILENAME=${2:LENGTH_TO_STRIP}
 
+	echo "aaaf"${FILE_TO_SHARE}
+
 	make_dir_for_config_file_if_necessary ${FILENAME}
 	cp ${FILE_TO_SHARE} ${FILENAME}
 
