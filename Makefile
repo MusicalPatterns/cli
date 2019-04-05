@@ -29,6 +29,9 @@ push:
 restart:
 	@:
 
+revert:
+	@bin/revert.sh
+
 run:
 	@:
 

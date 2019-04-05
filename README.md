@@ -88,6 +88,10 @@ Pushes to Github, including all submodules.
 
 Stops, then starts (naturally) the server.
 
+`musical-patterns-cli revert`
+
+Reverts the previous commit, and then if this reverts the package version to before the latest published version, sets it back to the latest published version and commits.
+
 `musical-patterns-cli run file=src/myFile.ts`
 
 Compiles a TypeScript file using the necessary configuration and runs it.
