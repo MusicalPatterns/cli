@@ -29,6 +29,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Musical Patterns',
             meta: { viewport: 'width=device-width' },
+            hash: true,
         }),
         new ForkTsCheckerWebpackPlugin(),
     ],
