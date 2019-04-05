@@ -4,7 +4,7 @@ if [[ CLI_DIR == "" ]] ; then
 	echo "escape cli dir is being set to ../../../"
 	ESCAPE_CLI_DIR="../../../"
 else
-	echo "escape cli dir is being set to ./"
+	echo "escape cli dir is being set to ./ because CLI_DIR was"${CLI_DIR}
 	ESCAPE_CLI_DIR="./"
 fi
 
