@@ -54,7 +54,7 @@ Since every repo uses the `cli`, they rely on it to share their latest configura
 
 `musical-patterns-cli build`
 
-Defaults to compile typescript using the "library" style configuration, but you can override this in your `Makefile.*` file.
+Defaults to compile typescript using the "publish" style Webpack configuration, but you can override this by passing e.g. `config=deploy`.
 
 `musical-patterns-cli build-local`
 
