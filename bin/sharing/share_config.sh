@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-if [[ CLI_DIR == "" ]] ; then
-	echo "escape cli dir is being set to ../../../"
-	ESCAPE_CLI_DIR="../../../"
-else
-	echo "escape cli dir is being set to ./ because CLI_DIR was"${CLI_DIR}
+if [[ CLI_DIR == "./node_modules/@musical-patterns/cli/" ]] ; then
 	ESCAPE_CLI_DIR="./"
+else
+	ESCAPE_CLI_DIR="../../../"
 fi
 
 . ${CLI_DIR:=./}bin/non_cli/services.sh
