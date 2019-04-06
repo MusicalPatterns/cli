@@ -22,5 +22,9 @@ module.exports = {
         '@musical-patterns/playroom',
         '@musical-patterns/snapshot',
         '@musical-patterns/utilities',
+        '@musical-patterns/id',
+        '@musical-patterns/spec',
+        '@musical-patterns/metadata',
+        '@musical-patterns/material',
     ],
 }
