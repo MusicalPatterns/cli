@@ -6,10 +6,11 @@ module.exports = {
         'test/**/*.test.jsx',
     ],
     helpers: [
+        'test/customMatchers.ts',
         'test/mockDom.ts',
         'test/setup.ts',
         'test/reporter.ts',
-        'test/noFailureOnNonEmptySuite.ts'
+        'test/noFailureOnNonEmptySuite.ts',
     ],
     oneFailurePerSpec: false,
     random: false,
