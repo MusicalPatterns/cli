@@ -1,4 +1,3 @@
-performer:8081
 material:8081
 playroom:8082
 lab:8083
