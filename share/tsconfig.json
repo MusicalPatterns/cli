@@ -3,7 +3,9 @@
   "compilerOptions": {
     "declaration": true,
     "module": "esnext",
-    "outDir": "dist",
-    "rootDir": "src"
-  }
+    "outDir": "dist"
+  },
+  "exclude": [
+    "share"
+  ]
 }
