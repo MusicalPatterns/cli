@@ -18,6 +18,7 @@
       "ban-single-arg-parens"
     ],
     "ban-ts-ignore": false,
+    "ban-types": false,
     "brace-style": [
       true,
       "stroustrup"
