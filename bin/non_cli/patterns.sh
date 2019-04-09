@@ -6,7 +6,7 @@ export PATTERNS=(
 "houndstoothtopiaTheme"
 "moeom"
 "omnizonk"
-"performerQa"
+"materialQa"
 "playroomTest"
 "prototyper"
 "stepwise"

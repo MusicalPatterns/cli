@@ -150,7 +150,7 @@ If it did not avoid running the update command itself, it could not update itsel
 
 That all said, here is the usage:
 
-`make update pattern=performerQa`
+`make update pattern=materialQa`
 
 Installs the latest version of a pattern or service. Respects whether it is a prod or dev dependency.
 If run without a specified service or pattern, will update all @musical-patterns packages.
