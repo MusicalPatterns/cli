@@ -32,7 +32,7 @@ TIMEFORMAT=%R
 TIME_TO_BUILD_SRC=$( { time tsc -p ${TSCONFIG} > /dev/null 2>&1; } 2>&1 )
 echo "Compiling the source code for tests took "${TIME_TO_BUILD_SRC}" seconds."
 if [[ $? == 0 ]] ; then
-	NODE_ENV=test ts-node --files -P ${TSCONFIG} ${JASMINE_BINARY}
+	NODE_ENV=test ts-node --transpile-only --files -P ${TSCONFIG} ${JASMINE_BINARY}
 else
 	exit 1
 fi
