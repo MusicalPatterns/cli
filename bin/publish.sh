@@ -2,7 +2,7 @@
 
 set -e
 
-. ${CLI_DIR:=./}bin/non_cli/run_only_if_not_clean.sh
+. ${CLI_DIR:=./}bin/support/run_only_if_not_clean.sh
 
 publish() {
 	make build || return

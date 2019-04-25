@@ -1,11 +1,11 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.553",
+  "version": "1.0.554",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
   "scripts": {
-    "postinstall": "bash ./bin/non_cli/postinstall.sh"
+    "postinstall": "bash ./bin/support/postinstall.sh"
   },
   "license": "MIT",
   "repository": {

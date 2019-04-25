@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-. ./node_modules/@musical-patterns/cli/bin/non_cli/install_in_correct_dependency_section_if_installed.sh
-. ./node_modules/@musical-patterns/cli/bin/non_cli/fork_whether_pattern_or_service.sh
-. ./node_modules/@musical-patterns/cli/bin/non_cli/services.sh
-. ./node_modules/@musical-patterns/cli/bin/non_cli/patterns.sh
+. ./node_modules/@musical-patterns/cli/bin/support/install_in_correct_dependency_section_if_installed.sh
+. ./node_modules/@musical-patterns/cli/bin/support/fork_whether_pattern_or_service.sh
+. ./node_modules/@musical-patterns/cli/bin/support/services.sh
+. ./node_modules/@musical-patterns/cli/bin/support/patterns.sh
 
 if [[ "${service}" == "cli" || "${service}" == "" ]] ; then
 	make stop

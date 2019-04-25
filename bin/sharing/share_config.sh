@@ -6,7 +6,7 @@ else
 	export ESCAPE_CLI_DIR="../../../"
 fi
 
-. ${CLI_DIR:=./}bin/non_cli/services.sh
+. ${CLI_DIR:=./}bin/support/services.sh
 
 add_config_file_to_gitignore() {
 	FILE="$1"
