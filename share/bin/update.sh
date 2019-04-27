@@ -7,6 +7,8 @@
 
 if [[ "${service}" != "" ]] ; then
 	if printf '%s\n' ${SERVICES[@]} | grep -q -P '^'${service}'$'; then
+		:
+	else
 		echo "${service} is not a recognized service. Please try updating again."
 		exit 1
 	fi
@@ -14,6 +16,8 @@ fi
 
 if [[ "${pattern}" != "" ]] ; then
 	if printf '%s\n' ${PATTERNS[@]} | grep -q -P '^'${pattern}'$'; then
+		:
+	else
 		echo "${pattern} is not a recognized pattern. Please try updating again."
 		exit 1
 	fi
