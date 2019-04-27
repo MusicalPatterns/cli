@@ -14,7 +14,6 @@ These configuration files are for building, testing, linting, publishing, storin
 - .gitignore
 - .idea/codeStyles/codeStyleConfig.xml
 - .idea/codeStyles/Project.xml
-- .idea/inspectionProfiles/Project_Default.xml
 - .idea/jsLinters/tslint.xml
 - .idea/compiler.xml
 - .idea/encodings.xml
