@@ -133,7 +133,11 @@ Undoes the `use-latest-local` command. See that entry for more details.
 
 `musical-patterns-cli test`
 
-Runs your tests. Use `headful=true` for integration suites if you want to see what's going on.
+Runs your tests. 
+
+Use `types=true` to check that there are no typing errors in your test files. This is done when shipping but not by default, so tests run faster until you're ready to polish.
+
+Use `headful=true` for integration suites if you want to see what's going on.
 
 `musical-patterns-cli use-latest-local service=performer`
 

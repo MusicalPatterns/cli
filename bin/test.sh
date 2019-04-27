@@ -28,7 +28,7 @@ JASMINE_PATH="node_modules/jasmine/bin/jasmine.js"
 test -f "$JASMINE_PATH"
 JASMINE_BINARY=$([[ $? == 0 ]] && echo "${JASMINE_PATH}" || echo "${CLI_DIR}${JASMINE_PATH}")
 
-if [[ ${TYPE_CHECK} == "true" ]] ; then
+if [[ ${types} == "true" ]] ; then
 	MAYBE_TRANSPILE_ONLY=""
 else
 	MAYBE_TRANSPILE_ONLY="--transpile-only"

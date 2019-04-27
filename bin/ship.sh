@@ -12,7 +12,7 @@ fast_ship() {
 
 ship() {
 	bash ${CLI_DIR:=./}bin/sharing/check_config.sh
-	TYPE_CHECK=true make test || return
+	make test types=true || return
 	make lint || return
 	fast_ship
 }
