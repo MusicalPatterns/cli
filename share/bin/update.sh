@@ -5,6 +5,20 @@
 . ./node_modules/@musical-patterns/cli/bin/support/services.sh
 . ./node_modules/@musical-patterns/cli/bin/support/patterns.sh
 
+if [[ "${service}" != "" ]] ; then
+	if printf '%s\n' ${SERVICES[@]} | grep -q -P '^'${service}'$'; then
+		echo "${service} is not a recognized service. Please try updating again."
+		exit 1
+	fi
+fi
+
+if [[ "${pattern}" != "" ]] ; then
+	if printf '%s\n' ${PATTERNS[@]} | grep -q -P '^'${pattern}'$'; then
+		echo "${pattern} is not a recognized pattern. Please try updating again."
+		exit 1
+	fi
+fi
+
 if [[ "${service}" == "cli" || "${service}" == "" ]] ; then
 	make stop
 fi
