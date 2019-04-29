@@ -5,24 +5,6 @@
 . ./node_modules/@musical-patterns/cli/bin/support/services.sh
 . ./node_modules/@musical-patterns/cli/bin/support/patterns.sh
 
-if [[ "${service}" != "" ]] ; then
-	if printf '%s\n' ${SERVICES[@]} | grep -q -P '^'${service}'$'; then
-		:
-	else
-		echo "${service} is not a recognized service. Please try updating again."
-		exit 1
-	fi
-fi
-
-if [[ "${pattern}" != "" ]] ; then
-	if printf '%s\n' ${PATTERNS[@]} | grep -q -P '^'${pattern}'$'; then
-		:
-	else
-		echo "${pattern} is not a recognized pattern. Please try updating again."
-		exit 1
-	fi
-fi
-
 if [[ "${service}" == "cli" || "${service}" == "" ]] ; then
 	make stop
 fi
@@ -42,7 +24,41 @@ if [[ "${service}" == "" && "${pattern}" == "" ]] ; then
 		install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
 	done
 else
-	install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
+	if [[ "${service}" == *","* ]]; then
+		IFS=',' read -r -a services <<< "${service}"
+
+		for index in "${!services[@]}" ; do
+			make update service=${services[index]}
+		done
+	else
+		if [[ "${pattern}" == *","* ]]; then
+			IFS=',' read -r -a patterns <<< "${pattern}"
+
+			for index in "${!patterns[@]}" ; do
+				make update pattern=${patterns[index]}
+			done
+		else
+			if [[ "${service}" != "" ]] ; then
+				if printf '%s\n' ${SERVICES[@]} | grep -q -P '^'${service}'$'; then
+					:
+				else
+					echo "${service} is not a recognized service. Please try updating again."
+					exit 1
+				fi
+			fi
+
+			if [[ "${pattern}" != "" ]] ; then
+				if printf '%s\n' ${PATTERNS[@]} | grep -q -P '^'${pattern}'$'; then
+					:
+				else
+					echo "${pattern} is not a recognized pattern. Please try updating again."
+					exit 1
+				fi
+			fi
+
+			install_in_correct_dependency_section_if_installed @musical-patterns/${PACKAGE}@latest
+		fi
+	fi
 fi
 
 CLI_DIR="./node_modules/@musical-patterns/cli/" bash ./node_modules/@musical-patterns/cli/bin/sharing/share_config.sh

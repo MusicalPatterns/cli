@@ -159,6 +159,12 @@ Installs the latest version of a pattern or service. Respects whether it is a pr
 If run without a specified service or pattern, will update all @musical-patterns packages.
 Write the pattern name in camel case.
 
+You can also update multiple patterns or services at once by using a comma-separated list, such as
+
+`make update service=utilities,spec`
+
+The command does not currently support updating both services and patterns simultaneously (I believe services overrides patterns).
+
 Note: if the server for the current repo is running, and if `@musical-patterns/cli` itself is included in the updates, the `update` command calls `stop`; 
 otherwise that would cause a failure for trying to delete the CLI's `start.sh` file which was running a process.
 
