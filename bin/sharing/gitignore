@@ -1,10 +1,10 @@
-.idea/workspace.xml
-node_modules
-.DS_STORE
-.module-cache
+/.idea/workspace.xml
+/node_modules
+/.DS_STORE
+/.module-cache
 *.log*
-dist/*
-!dist/.gitkeep
+/dist/*
+!/dist/.gitkeep
 bash.exe.stackdump
-.npmignore
+/.npmignore
 report*.json

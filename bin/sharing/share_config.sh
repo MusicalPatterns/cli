@@ -15,7 +15,7 @@ add_config_file_to_gitignore() {
 		return 0
 	fi
 
-	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIR}.gitignore || echo "${FILE}" >> ${ESCAPE_CLI_DIR}.gitignore
+	grep -q -x -F "${FILE}" ${ESCAPE_CLI_DIR}.gitignore || echo "/${FILE}" >> ${ESCAPE_CLI_DIR}.gitignore
 }
 export -f add_config_file_to_gitignore
 
