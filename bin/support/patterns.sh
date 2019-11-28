@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export PATTERNS=(
+"bapbo"
 "beatenPath"
 "hafuhafu"
 "houndstoothtopiaTheme"
@@ -14,5 +15,4 @@ export PATTERNS=(
 "tsraxcfaubdj"
 "xenharmonicSeries"
 "zdaubyaos"
-"bapbo"
 )
