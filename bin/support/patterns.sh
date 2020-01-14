@@ -15,4 +15,5 @@ export PATTERNS=(
 "tsraxcfaubdj"
 "xenharmonicSeries"
 "zdaubyaos"
+"metMos"
 )
