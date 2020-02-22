@@ -27,15 +27,15 @@ let page: Page
 const isPortInUse: (portUnderCheck: number) => Promise<boolean> =
     async (portUnderCheck: number): Promise<boolean> =>
         new Promise((resolve: (result: boolean) => void): void => {
-            const portChecker: Server = createServer((socket: Socket) => {
+            const portChecker: Server = createServer((socket: Socket): void => {
                 socket.pipe(socket)
             })
 
             portChecker.listen(portUnderCheck, HOST)
-            portChecker.on('error', () => {
+            portChecker.on('error', (): void => {
                 resolve(true)
             })
-            portChecker.on('listening', () => {
+            portChecker.on('listening', (): void => {
                 portChecker.close()
                 resolve(false)
             })
@@ -49,7 +49,8 @@ const startServerIfNecessary: () => Promise<void> =
 
         return new Promise((resolve: VoidFunction, reject: (message: string) => void): void => {
             const server: ChildProcess = exec('make start open=false')
-            server.stdout.on('data', (data: string) => {
+
+            server.stdout!.on('data', (data: string): void => {
                 if (data.includes('Compiled successfully.') || data.includes('Compiled with warnings.')) {
                     resolve()
                 }
@@ -62,7 +63,7 @@ const startServerIfNecessary: () => Promise<void> =
 
 if (existsSync('test/integration')) {
     beforeAll(
-        async (done: DoneFn) => {
+        async (done: DoneFn): Promise<void> => {
             try {
                 const t0: number = performance.now()
                 await startServerIfNecessary()
@@ -86,7 +87,7 @@ if (existsSync('test/integration')) {
     )
 
     afterAll(
-        async (done: DoneFn) => {
+        async (done: DoneFn): Promise<void> => {
             try {
                 await browser.close()
             }
