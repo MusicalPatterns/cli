@@ -6,5 +6,5 @@ mkdir -p dist/
 rm -r dist/* > /dev/null 2>&1 || true
 touch dist/.gitkeep
 
-BUILD_CMD="NODE_ENV=production webpack --config webpack."${config:="publish"}".js --colors"
+BUILD_CMD="NODE_ENV=production webpack --config webpack."${config:="publish"}".js"
 eval "${BUILD_CMD}"
