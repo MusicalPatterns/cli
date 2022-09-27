@@ -63,7 +63,7 @@ const startServerIfNecessary: () => Promise<void> =
 
 if (existsSync('test/integration')) {
     beforeAll(
-        async (done: DoneFn): Promise<void> => {
+        async (): Promise<void> => {
             try {
                 const t0: number = performance.now()
                 await startServerIfNecessary()
@@ -80,22 +80,18 @@ if (existsSync('test/integration')) {
             catch (e: any) {
                 logMessageToConsole('Error in setup: ', e)
             }
-
-            done()
         },
         PUPPETEER_TIMEOUT,
     )
 
     afterAll(
-        async (done: DoneFn): Promise<void> => {
+        async (): Promise<void> => {
             try {
                 await browser.close()
             }
             catch (e: any) {
                 logMessageToConsole('Error in setdown: ', e)
             }
-
-            done()
         },
         PUPPETEER_TIMEOUT,
     )
