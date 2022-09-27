@@ -7,11 +7,9 @@ module.exports = {
     devServer: {
         open: true,
         port,
-        devMiddleware: {
-            stats: {
-                warningsFilter: /export .* was not found in/,
-            },
-        },
+        ignoreWarnings: [
+            { message: /export .* was not found in/ },
+        ],
     },
     output: {
         filename: 'index.[contenthash].js',
