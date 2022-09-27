@@ -7,8 +7,10 @@ module.exports = {
     devServer: {
         open: true,
         port,
-        stats: {
-            warningsFilter: /export .* was not found in/,
+        devMiddleware: {
+            stats: {
+                warningsFilter: /export .* was not found in/,
+            },
         },
     },
     output: {
