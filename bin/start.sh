@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ ${open} == "false" ]] ; then
-	START_PART="--open=false"
+	START_PART="--no-open"
 else
 	START_PART=""
 fi
