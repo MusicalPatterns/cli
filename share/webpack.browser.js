@@ -7,9 +7,6 @@ module.exports = {
     devServer: {
         open: true,
         port,
-        ignoreWarnings: [
-            { message: /export .* was not found in/ },
-        ],
     },
     output: {
         filename: 'index.[contenthash].js',
@@ -33,4 +30,7 @@ module.exports = {
             meta: { viewport: 'width=device-width' },
         }),
     ],
+    ignoreWarnings: [
+        { message: /export .* was not found in/ },
+    ]
 }
