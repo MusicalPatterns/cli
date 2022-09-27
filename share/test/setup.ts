@@ -77,7 +77,7 @@ if (existsSync('test/integration')) {
                 const t3: number = performance.now()
                 logMessageToConsole(`Starting puppeteer took ${Math.round(t3 - t2) / 1000} seconds.`)
             }
-            catch (e) {
+            catch (e: any) {
                 logMessageToConsole('Error in setup: ', e)
             }
 
@@ -91,7 +91,7 @@ if (existsSync('test/integration')) {
             try {
                 await browser.close()
             }
-            catch (e) {
+            catch (e: any) {
                 logMessageToConsole('Error in setdown: ', e)
             }
 
