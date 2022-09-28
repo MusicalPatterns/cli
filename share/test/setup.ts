@@ -11,7 +11,6 @@ catch (e) {
 
 import { ChildProcess, exec } from 'child_process'
 import { existsSync } from 'fs'
-import { createServer, Server, Socket } from 'net'
 import { Browser, launch, Page } from 'puppeteer'
 // @ts-ignore
 import { port } from '../bin/port'
@@ -24,34 +23,13 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
 let browser: Browser
 let page: Page
 
-const isPortInUse: (portUnderCheck: number) => Promise<boolean> =
-    async (portUnderCheck: number): Promise<boolean> =>
-        new Promise((resolve: (result: boolean) => void): void => {
-            const portChecker: Server = createServer((socket: Socket): void => {
-                socket.pipe(socket)
-            })
-
-            portChecker.listen(portUnderCheck, HOST)
-            portChecker.on('error', (): void => {
-                resolve(true)
-            })
-            portChecker.on('listening', (): void => {
-                portChecker.close()
-                resolve(false)
-            })
-        })
-
-const startServerIfNecessary: () => Promise<void> =
+const startServer: () => Promise<void> =
     async (): Promise<void> => {
-        if (await isPortInUse(port)) {
-            return
-        }
-
         return new Promise((resolve: VoidFunction, reject: (message: string) => void): void => {
             const server: ChildProcess = exec('make start open=false')
 
             server.stdout!.on('data', (data: string): void => {
-                if (data.includes('Compiled successfully.') || data.includes('Compiled with warnings.')) {
+                if (data.includes('compiled')) { // as of webpack 5, this seems to be the way to know it succeeded
                     resolve()
                 }
                 if (data.includes('Failed to compile.')) {
@@ -66,7 +44,7 @@ if (existsSync('test/integration')) {
         async (): Promise<void> => {
             try {
                 const t0: number = performance.now()
-                await startServerIfNecessary()
+                await startServer()
                 const t1: number = performance.now()
                 logMessageToConsole(`Starting the server took ${Math.round(t1 - t0) / 1000} seconds.`)
 
