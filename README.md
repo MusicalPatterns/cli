@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/MusicalPatterns/cli.svg?branch=master)](https://travis-ci.com/MusicalPatterns/cli)
-
 # Musical Patterns - CLI
 
 Provides all the common commands, configuration, and dependencies for developing a Musical Patterns repo.
