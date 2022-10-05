@@ -4,7 +4,7 @@ set -e
 
 pull_recursively() {
 	git submodule update --init --recursive || return
-	git checkout master || return
+	git checkout main || return
 	git pull -r || return
 	git submodule foreach pull_recursively
 }
