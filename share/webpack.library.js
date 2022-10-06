@@ -4,6 +4,8 @@ module.exports = {
         filename: 'index.js',
         globalObject: 'this',
         libraryTarget: 'umd',
+        publicPath: '/',
+        chunkLoading: 'async-node'
     },
     module: {
         rules: [
