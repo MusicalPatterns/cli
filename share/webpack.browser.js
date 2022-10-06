@@ -10,6 +10,7 @@ module.exports = {
     },
     output: {
         filename: 'index.[contenthash].js',
+        publicPath: '/',
     },
     module: {
         rules: [
