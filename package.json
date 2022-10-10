@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/cli",
-  "version": "1.0.597",
+  "version": "1.0.598",
   "bin": {
     "musical-patterns-cli": "bin/index.sh"
   },
@@ -14,14 +14,14 @@
   },
   "dependencies": {
     "@types/jasmine": "^4.3.0",
-    "@types/node": "^18.8.2",
+    "@types/node": "^18.8.3",
     "@types/puppeteer": "^5.4.6",
     "browser-env": "^3.3.0",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.5.0",
     "jasmine": "^4.4.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "puppeteer": "^18.2.0",
+    "puppeteer": "^18.2.1",
     "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4",

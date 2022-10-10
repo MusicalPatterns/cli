@@ -5,7 +5,6 @@ module.exports = {
         globalObject: 'this',
         libraryTarget: 'umd',
         publicPath: '/',
-        chunkLoading: 'async-node'
     },
     module: {
         rules: [
